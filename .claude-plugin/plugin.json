@@ -1,0 +1,19 @@
+{
+  "name": "kira-studio",
+  "displayName": "Kira Studio",
+  "version": "2.0.0",
+  "description": "Unified Roblox Studio expert plugin: premium GUI, motion, VFX, strict Luau, networking, combat, security, data, workflows, local-first knowledge search.",
+  "author": {
+    "name": "Kira Studio Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "roblox",
+    "studio",
+    "luau",
+    "game-development",
+    "ui",
+    "vfx",
+    "optimization"
+  ]
+}

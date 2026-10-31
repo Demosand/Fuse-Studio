@@ -1,30 +1,53 @@
-# Kira Studio — установка и возможности
+# Kira Studio 2.0 — усиленный набор навыков Roblox для Claude Code
 
-**Объединённый набор скиллов для Claude Code и Roblox Studio.** В нём есть архитектура и оптимизация Luau, серверная безопасность, DataStore, дизайн интерфейсов, VFX, освещение, анимации, NPC, экономика и тестирование.
+**21 скилл-команда, 82 справочника, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
 
-Вдохновлён [ro-engineer](https://github.com/excaldev/ro-engineer) и [roblox-brain](https://github.com/AkitoDevs/roblox-brain), но это самостоятельно переработанная подборка, **не полная буквальная копия** двух баз знаний. Оригинальные лицензии: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Kira Studio создан с учётом сильных сторон [ro-engineer](https://github.com/excaldev/ro-engineer) и [roblox-brain](https://github.com/AkitoDevs/roblox-brain), но это самостоятельная переработка и дополнение; **не буквальное объединение 100% файлов двух исходников**. Оригинальные MIT-уведомления: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Установка после загрузки на GitHub
+## Установка из GitHub
+
+Создайте репозиторий `kira-studio`. Распакуйте ZIP и загрузите **содержимое архива в корень репозитория**. Скрытые файлы `.claude-plugin` и `.mcp.json` обязательны.
 
 В Claude Code:
 
 ```text
-/plugin marketplace add ВАШ_НИК/kira-studio
+/plugin marketplace add ВАШ_GITHUB_НИК/kira-studio
 /plugin install kira-studio@kira-studio
 ```
 
-Замените `ВАШ_НИК` на логин GitHub. Важно: файлы `.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json`, `.mcp.json` должны лежать в нужных местах, а не быть потеряны при загрузке.
+После публикации и установки перезапустите Claude Code. Node.js 18+ нужен только для встроенного локального поиска (не нужен npm install). Плагин не отправляет заметки автору и не подключается к внешним API.
 
-## Команды
+Для обновления:
 
-- `/kira-studio:kira-studio` — универсальный режим.
-- `/kira-studio:build` — написание/исправление игровых систем.
-- `/kira-studio:ui` — продвинутые интерфейсы.
-- `/kira-studio:vfx` — эффекты, анимация, камера, звук.
-- `/kira-studio:review` — аудит ошибок и эксплойтов.
-- `/kira-studio:optimize` — лаги, FPS, сеть, профилирование.
-- `/kira-studio:plan` — архитектура новой механики.
+```text
+/plugin marketplace update kira-studio
+/plugin update kira-studio@kira-studio
+```
 
-Все данные локальны. **Никаких анонимных отправок уроков автору**, как у оригинального `roblox-brain`. Требуется Node.js 18+ для локального MCP-поиска; установка npm-пакетов не нужна. Без MCP-бриджа Roblox Studio плагин сам игру редактировать не сможет — нужны соответствующие Studio MCP-инструменты.
+## Главные команды
 
-Перед публикацией запустите `npm test` и, если доступна команда Claude, `claude plugin validate .`.
+```text
+/kira-studio:ui Сделай премиальный GUI инвентаря с анимациями и адаптивностью
+/kira-studio:ui-motion Добавь красивые анимации кнопок и переходов
+/kira-studio:gui-audit Оцени и улучши мой интерфейс
+/kira-studio:vfx Сделай красивый VFX для ударов мечом
+/kira-studio:combat Реализуй безопасную стрельбу с компенсацией пинга
+/kira-studio:build Напиши эту игровую механику на Luau
+/kira-studio:optimize Найди и исправь лаги
+/kira-studio:security Проверь RemoteEvents на эксплойты
+/kira-studio:npc Сделай NPC с нормальным ИИ и pathfinding
+/kira-studio:data Улучши DataStore и сохранение
+/kira-studio:studio Проверь и исправь открытый проект Roblox Studio
+```
+
+`studio` работает с живым Roblox Studio **только если дополнительно установлен совместимый Studio MCP**. Без него Claude сможет писать код с точным указанием мест расположения, но не сможет проверить его запуск автоматически.
+
+## Преимущества версии 2.0
+
+- **GUI сильно улучшен:** дизайн-системы, адаптивная вёрстка, микровзаимодействия, многошаговые анимации, инвентари, магазины, HUD, gamepad, touch, локализация и чек-лист визуального качества.
+- **VFX улучшен:** направленные эффекты, лучи/трейлы, камеры, звук, уровни качества, безопасная очистка.
+- **Инженерия улучшена:** Strict Luau, rollback, lag compensation, защита RemoteEvents, миграции сохранений, работа с большим количеством NPC, профилирование.
+- **Экономия контекста:** поиск по разделу и чтение по частям. Скиллы вызываются вручную, когда нужны.
+- **Проверяемость:** `npm test`, `npm run check`, `npm run benchmark`. Тесты поиска не доказывают, что Kira Studio уже превосходит оригиналы при генерации игры.
+
+Подробнее в [английском README](README.md), [каталоге знаний](reference-index.md) и [проверках](docs/verification.md).

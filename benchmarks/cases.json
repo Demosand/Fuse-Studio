@@ -1,0 +1,14 @@
+[
+  {"id":"premium-gui","area":"ui","query":"create beautiful responsive GUI with gamepad navigation and smooth animation","expectAny":["knowledge/ui-expert/","knowledge/presentation/ui"]},
+  {"id":"russian-gui","area":"ui","query":"сделай красивый гуи инвентарь с анимациями для телефона","expectAny":["knowledge/ui-expert/","knowledge/presentation/ui"]},
+  {"id":"remote-exploit","area":"engineering","query":"remote validation malicious client","expectAny":["network-security","anti-exploit"]},
+  {"id":"shooter-rewind","area":"engineering","query":"subtick lag compensation server rewind hit validation","expectAny":["lag-compensation"]},
+  {"id":"persist","area":"engineering","query":"datastore safe saving session lock schema migration","expectAny":["data-persistence","datastore-migrations"]},
+  {"id":"fast-effects","area":"vfx","query":"sword VFX impact mobile performance beam trail","expectAny":["vfx","effect-direction"]},
+  {"id":"npc","area":"gameplay","query":"pathfinding NPC state machine blocked target chase","expectAny":["npc"]},
+  {"id":"monetize","area":"all","query":"ProcessReceipt durable purchase deduplication","expectAny":["monetization","shop-and-monetization","transactions"]},
+  {"id":"progression","area":"gameplay","query":"progression economy retention loop","expectAny":["loops-economy","game-design-progression"]},
+  {"id":"ui-controller","area":"ui","query":"modal open close race cancel tween reduced motion","expectAny":["interaction-state","motion-orchestration","animation-primitives"]},
+  {"id":"profile","area":"engineering","query":"MicroProfiler network stutter frame time memory","expectAny":["performance","memory-profiling"]},
+  {"id":"studio","area":"operations","query":"Roblox Studio MCP edit scripts playtest console safe","expectAny":["studio-mcp-safe-operations","studio-workflow"]}
+]

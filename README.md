@@ -1,91 +1,101 @@
-# Kira Studio
+# Kira Studio v2.0 — Roblox Studio super toolkit for Claude Code
 
-**One unified, privacy-first, token-aware Roblox Studio development plugin for Claude Code.**
+**One local-first plugin for premium GUI, VFX, Lua(u) engineering, game design, secure multiplayer and Roblox Studio workflows.**
 
-Kira Studio combines the engineering/system-design strengths of [ro-engineer](https://github.com/excaldev/ro-engineer) with the wide creative and Studio knowledge coverage of [roblox-brain](https://github.com/AkitoDevs/roblox-brain), then adds cross-domain workflows, explicit invocations, local knowledge search, low-end mobile quality guidance, testing and multiplayer security checks.
+> Independent plugin inspired by the MIT-licensed [ro-engineer](https://github.com/excaldev/ro-engineer) and [roblox-brain](https://github.com/AkitoDevs/roblox-brain), substantially extended with original specialist guides and workflows. Not an official upstream fork, endorsement or complete verbatim mirror. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-> This is an independent, original integration inspired by both projects, **not a verbatim copy of their entire knowledge libraries**. Both projects are MIT-licensed; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Not affiliated with Roblox or Anthropic.
+## Install from GitHub
 
-## Install in Claude Code (after publishing this folder as `YOUR_USERNAME/kira-studio` on GitHub)
+Publish these files at the **root** of a public GitHub repository named `kira-studio`. Keep hidden `.claude-plugin/` and `.mcp.json` files. In Claude Code:
 
 ```text
-/plugin marketplace add YOUR_USERNAME/kira-studio
+/plugin marketplace add YOUR_GITHUB_USERNAME/kira-studio
 /plugin install kira-studio@kira-studio
 ```
 
-Replace `YOUR_USERNAME` with the actual GitHub username or organization. Restart Claude Code or run `/reload-plugins` if supported. Open `/plugin` to manage installation/update.
+Replace `YOUR_GITHUB_USERNAME` with your real GitHub username. Restart Claude Code or reload plugins. Requires Node.js **18+** for the optional local MCP knowledge search; no `npm install`, paid API or third-party telemetry.
 
-**CLI alternative:**
+**CLI:**
 
-```bash
-claude plugin marketplace add YOUR_USERNAME/kira-studio
+```sh
+claude plugin marketplace add YOUR_GITHUB_USERNAME/kira-studio
 claude plugin install kira-studio@kira-studio
 ```
 
-### Available commands
+**Update:**
 
-| Command | Task |
+```sh
+claude plugin marketplace update kira-studio
+claude plugin update kira-studio@kira-studio
+```
+
+**Local development:** use `claude --plugin-dir ./kira-studio` and, if installed, `claude plugin validate ./kira-studio`. No files are uploaded automatically by this package.
+
+## What is included
+
+- **21 named skills/commands** (one default router; 20 explicitly invoked specialists).
+- **82 curated articles + 6 workflows** = **88 searchable references** (see [index](reference-index.md)).
+- **3 optional expert agents**: UI critic, network security reviewer, performance profiler.
+- **8 templates** and **5 Luau examples** (note: examples require integration/Studio testing).
+- **Local MCP** `search_knowledge` and `read_knowledge` (English/Russian, topical filtering, chunked reads), no HTTP or telemetry.
+- **Automated validation** and local knowledge routing regression cases. Quality of generated games still requires Studio evaluation.
+
+### Most useful commands
+
+| Command | What it does |
 |---|---|
-| `/kira-studio:kira-studio ...` | All-purpose Roblox engineering skill (also auto-invoked when relevant) |
-| `/kira-studio:build ...` | Build or repair features |
-| `/kira-studio:ui ...` | Design and build UI |
-| `/kira-studio:vfx ...` | Particles, VFX, animation, camera, audio |
-| `/kira-studio:review ...` | Security/code review |
-| `/kira-studio:optimize ...` | Performance investigation |
-| `/kira-studio:plan ...` | Feature/system plan |
+| `/kira-studio:ui` | Visual art direction, polished GUI, responsive layouts, state lifecycle |
+| `/kira-studio:ui-motion` | Fancy but robust animations, tweens, reduced motion |
+| `/kira-studio:gui-audit` | 40-point interface scorecard and prioritized improvements |
+| `/kira-studio:vfx` | Impact effects, particles, trails, lighting, camera, mobile tiers |
+| `/kira-studio:combat` | Shooting, melee, hit detection, lag compensation, anti-cheat |
+| `/kira-studio:build` | Feature implementation in strict Luau |
+| `/kira-studio:network` | Network authority, reliability, snapshots, prediction |
+| `/kira-studio:data` | DataStores, migrations, sessions, purchase correctness |
+| `/kira-studio:npc` | NPC behaviors, perception, pathfinding |
+| `/kira-studio:studio` | Safe live editing/playtesting if an external Studio MCP is available |
+| `/kira-studio:review` | Security and performance code audit |
+| `/kira-studio:optimize` | CPU/GPU/replication/GC profiling workflow |
+| `/kira-studio:benchmark` | Structured tests; prevents unproven performance claims |
 
-These are **plugin-prefixed skill commands**, not separate plugins. The six specialized skills are user-only to avoid unnecessary always-on context. The main skill auto-triggers only when relevant. All content works offline.
+Other named skills: `animate`, `economy`, `kira-studio`, `lighting`, `plan`, `publish`, `security`, `world`.
 
-**Examples:**
+Example prompts:
 
 ```text
-/kira-studio:build Add a server-authoritative melee system to my existing game
-/kira-studio:ui Build a responsive inventory with satisfying animated transitions
-/kira-studio:vfx Make a stylized sword impact with mobile quality tiers
-/kira-studio:review Check my shop Remotes for exploits and receipt duplicate-grants
-/kira-studio:optimize Diagnose client stutter when 40 players shoot
+/kira-studio:ui Create a cinematic sci-fi inventory GUI with mobile layout and controller support
+/kira-studio:ui-motion Make the shop open/close like a polished console game, never break under rapid clicks
+/kira-studio:combat Improve hit registration with server-side validation at high ping
+/kira-studio:vfx Design a readable electric sword finisher with low-end mobile fallback
+/kira-studio:review Audit every currency-awarding remote for exploits and duplicate grants
 ```
 
-## What is inside
+Claude can also automatically use the core `kira-studio` skill for Roblox tasks. The other commands are opt-in to minimize accidental heavy workflows. Specialized knowledge is loaded only when needed.
 
-- Strict Luau, typed interfaces, pragmatic module/composition/OOP/ECS selection.
-- Secure remotes, client/server ownership, interpolation, prediction, lag compensation, and reliable hit checks.
-- Safe DataStore patterns, lifecycle cleanup, performance and tests.
-- Gameplay, combat, NPCs, physics, round loops, progression and monetization.
-- Responsive UI, motion design, VFX, audio, lighting, art, modeling and accessibility.
-- Release and audit procedures, clear templates and optional Roblox Studio MCP integration.
+## Why the unified design matters
 
-## Token economy & privacy
+1. **Engineer first:** inspect existing code, avoid unnecessary rewrites; strict types, server authority, safe remotes, lifecycle and current Roblox APIs.
+2. **Design director:** unique visual language, hierarchy, deliberate motion, full input/mobile support, reduced-motion accessibility, premium effects with performance budgets.
+3. **Release rigor:** tests, failure modes, screenshots and performance evidence; no unverified 'I tested it' claims.
+4. **Privacy and token care:** local read-only Node MCP; no external endpoint and no automatic lesson sharing; search once on complex tasks, small results; read long files in chunks.
+5. **No fake tooling:** a skill alone cannot control Roblox Studio. Install a compatible Studio MCP bridge separately for actual live edits/playtesting; otherwise Claude provides code, exact placement and manual verification.
 
-The plugin **never uploads files, logs, lessons or telemetry to a third party**. Its optional MCP server performs local searches against `knowledge/*.md`. It uses Node.js **18+**, built-in modules only, no `npm install`. Both knowledge tools are local, read-only, and capped in output. No hooks, model downloads or code execution from unknown sources.
+### Privacy and dependencies
 
-Simple tasks can skip knowledge search; unfamiliar/specialist tasks search once then load targeted entries. Use `/context` in Claude Code to inspect your own consumption. No fixed percent savings are promised. The server's always-on tool definitions still have a small token cost. To disable just local searching, remove or rename `.mcp.json` before installation; the Markdown files remain usable.
+No third-party API keys or npm packages required. MCP is launched locally via `node` and reads Markdown from this repo. It doesn't execute Luau or modify project files. Agents are optional and are not automatically required for every task. Use `/context` in Claude Code to measure real token consumption; there is no claimed guaranteed percentage savings.
 
-## Roblox Studio connectivity
+## Test before publishing
 
-Kira Studio is a **knowledge and workflow plugin**, not a standalone Studio bridge. For live read/edit/playtest, connect a supported Roblox Studio MCP bridge separately; Kira Studio discovers and uses available tools. If none is installed, it gives source code and precise placement steps. Rojo-based repository workflows are also supported.
-
-## Developer validation
-
-```bash
-node --version    # Node 18+
-npm test          # Offline, no dependencies
-npm run check     # Validate manifests / reference paths
-claude plugin validate .  # Authoritative validation if Claude Code CLI installed
+```sh
+node --version
+npm test
+npm run check
+npm run benchmark
+claude plugin validate .  # only if Claude Code CLI is installed
 ```
 
-## Publishing your own copy
+The local search benchmark verifies **reference relevance**, not whether Claude produces a superior game. Do not confuse pass rates with a head-to-head comparison of other plugins. See [evaluation methodology](knowledge/tools/benchmark-methodology.md) and [verification](docs/verification.md).
 
-1. Create a public GitHub repository named `kira-studio`.
-2. Upload **the contents of this folder to the repository root** (not a folder within it). Include hidden directory `.claude-plugin` and `.mcp.json`.
-3. Keep `LICENSE` and `THIRD_PARTY_NOTICES.md`.
-4. Run `/plugin marketplace add YOUR_USERNAME/kira-studio`, then `/plugin install kira-studio@kira-studio`.
-5. Increment `.claude-plugin/plugin.json` version for releases; users can update the marketplace and plugin through `/plugin`.
+## Source and rights
 
-If you clone locally: `claude --plugin-dir ./kira-studio` can load it for development without publishing.
-
-## Provenance and maintenance
-
-This v1 is independently reorganized and condensed (not an exhaustive mirror of either upstream). **No auto-update from upstream**: documentation is reviewed deliberately. Some Roblox APIs and platform rules evolve; verify against [Roblox Creator Hub](https://create.roblox.com/docs) before shipping. Upstream concepts and full MIT notices: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-MIT © 2026 Kira Studio Contributors.
+Copyright 2026 Kira Studio Contributors. MIT license. Original projects and their MIT notices are credited in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The new documentation is an original synthesis and expansion, not a complete mirror; review upstream changes and Roblox API deprecations periodically. Neither Roblox Corporation nor Anthropic sponsors this project.
