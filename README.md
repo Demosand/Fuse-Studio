@@ -9,11 +9,11 @@
 Publish these files at the **root** of a public GitHub repository named `kira-studio`. Keep hidden `.claude-plugin/` and `.mcp.json` files. In Claude Code:
 
 ```text
-/plugin marketplace add YOUR_GITHUB_USERNAME/kira-studio
+/plugin marketplace add Demosand/Kira-Studio
 /plugin install kira-studio@kira-studio
 ```
 
-Replace `YOUR_GITHUB_USERNAME` with your real GitHub username. Restart Claude Code or reload plugins. Requires Node.js **18+** for the optional local MCP knowledge search; no `npm install`, paid API or third-party telemetry.
+Restart Claude Code or reload plugins. Requires Node.js **18+** for the optional local MCP knowledge search; no `npm install`, paid API or third-party telemetry.
 
 **CLI:**
 

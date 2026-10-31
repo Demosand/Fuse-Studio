@@ -11,7 +11,7 @@ Kira Studio создан с учётом сильных сторон [ro-enginee
 В Claude Code:
 
 ```text
-/plugin marketplace add ВАШ_GITHUB_НИК/kira-studio
+/plugin marketplace add Demosand/Kira-Studio
 /plugin install kira-studio@kira-studio
 ```
 
