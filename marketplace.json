@@ -1,0 +1,22 @@
+{
+  "name": "kira-studio",
+  "description": "Kira Studio: Roblox/Luau engineering, design and art knowledge",
+  "owner": {
+    "name": "Kira Studio Contributors"
+  },
+  "plugins": [
+    {
+      "name": "kira-studio",
+      "source": "./",
+      "description": "One privacy-first, token-aware Roblox engineering and creative toolbox",
+      "category": "game-development",
+      "tags": [
+        "roblox",
+        "luau",
+        "ui",
+        "vfx",
+        "studio"
+      ]
+    }
+  ]
+}

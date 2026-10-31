@@ -1,0 +1,19 @@
+{
+  "name": "kira-studio",
+  "displayName": "Kira Studio",
+  "version": "1.0.0",
+  "description": "Roblox/Luau architecture, gameplay, UI, VFX, art, networking, security, performance, testing and publishing in a single local-first plugin.",
+  "author": {
+    "name": "Kira Studio Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "roblox",
+    "studio",
+    "luau",
+    "game-development",
+    "ui",
+    "vfx",
+    "optimization"
+  ]
+}

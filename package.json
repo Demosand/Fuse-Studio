@@ -1,0 +1,14 @@
+{
+  "name": "kira-studio-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first Roblox knowledge server for Claude Code",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "kira-studio-knowledge": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/server/index.mjs"
+      ]
+    }
+  }
+}
