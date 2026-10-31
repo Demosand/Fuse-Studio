@@ -11,7 +11,7 @@ Fuse Studio создан с учётом сильных сторон [ro-enginee
 В Claude Code:
 
 ```text
-/plugin marketplace add Demosand/Kira-Studio
+/plugin marketplace add Demosand/Fuse-Studio
 /plugin install fuse-studio@fuse-studio
 ```
 
@@ -60,4 +60,4 @@ Fuse Studio создан с учётом сильных сторон [ro-enginee
 
 Включён полноценный MIT-код [Stud UI Clean Roblox](https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox): StudUI, StudMotion, CheckUIIcons (1022 иконки), справочники и 6 примеров. См. `vendor/stud-ui` и `docs/stud-ui-integration.md`.
 
-**Имя GitHub-репозитория нужно отдельно переименовать** в Settings > General: `Kira-Studio` → `Fuse-Studio`. Пока не переименовал, добавляй marketplace по `Demosand/Kira-Studio`; сам плагин уже устанавливается через `/plugin install fuse-studio@fuse-studio`.
+**Официальный репозиторий:** [Demosand/Fuse-Studio](https://github.com/Demosand/Fuse-Studio). Для установки используй `/plugin marketplace add Demosand/Fuse-Studio`, затем `/plugin install fuse-studio@fuse-studio`.
