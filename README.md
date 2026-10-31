@@ -18,7 +18,7 @@ Restart Claude Code or reload plugins. Requires Node.js **18+** for the optional
 **CLI:**
 
 ```sh
-claude plugin marketplace add YOUR_GITHUB_USERNAME/kira-studio
+claude plugin marketplace add Demosand/Kira-Studio
 claude plugin install kira-studio@kira-studio
 ```
 
