@@ -42,3 +42,7 @@ HUD observes a read-only client-side representation of server state. Buttons inv
 ## Visual QA
 
 Can player tell what's clickable within one second? Is rarity coded with both color and shape/text? Do hover/click states appear on keyboard/mouse, touch and gamepad? Are modal focus traps and close actions consistent? Does every animation serve understanding rather than just movement?
+
+
+## Select a GUI style
+For new interfaces read `knowledge/ui-expert/style-selector` and `style-presets`; use the provided style or existing project tokens first. For Stud style, consult `knowledge/ui-expert/stud-ui-design` and the MIT upstream component kit bundled at `vendor/stud-ui`.

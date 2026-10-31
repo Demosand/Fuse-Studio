@@ -29,7 +29,7 @@ test('stdio MCP initializes, lists tools, searches, reads and rejects traversal'
     child.stdin.write(JSON.stringify({jsonrpc:'2.0',id,method,params})+'\n');
   });
   const initialized=await send('initialize',{protocolVersion:'2025-06-18',capabilities:{},clientInfo:{name:'test',version:'1.0'}});
-  assert.equal(initialized.result.serverInfo.name,'kira-studio-knowledge');
+  assert.equal(initialized.result.serverInfo.name,'fuse-studio-knowledge');
   const list = await send('tools/list',{});
   assert.deepEqual(list.result.tools.map(x=>x.name),['search_knowledge','read_knowledge']);
   const result=await send('tools/call',{name:'search_knowledge',arguments:{query:'remote validation security'}});

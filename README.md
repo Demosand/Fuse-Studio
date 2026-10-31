@@ -1,4 +1,4 @@
-# Kira Studio v2.0 — Roblox Studio super toolkit for Claude Code
+# Fuse Studio v2.1 — Roblox Studio super toolkit for Claude Code
 
 **One local-first plugin for premium GUI, VFX, Lua(u) engineering, game design, secure multiplayer and Roblox Studio workflows.**
 
@@ -6,11 +6,11 @@
 
 ## Install from GitHub
 
-Publish these files at the **root** of a public GitHub repository named `kira-studio`. Keep hidden `.claude-plugin/` and `.mcp.json` files. In Claude Code:
+Publish these files at the **root** of a public GitHub repository named `fuse-studio`. Keep hidden `.claude-plugin/` and `.mcp.json` files. In Claude Code:
 
 ```text
 /plugin marketplace add Demosand/Kira-Studio
-/plugin install kira-studio@kira-studio
+/plugin install fuse-studio@fuse-studio
 ```
 
 Restart Claude Code or reload plugins. Requires Node.js **18+** for the optional local MCP knowledge search; no `npm install`, paid API or third-party telemetry.
@@ -19,22 +19,22 @@ Restart Claude Code or reload plugins. Requires Node.js **18+** for the optional
 
 ```sh
 claude plugin marketplace add Demosand/Kira-Studio
-claude plugin install kira-studio@kira-studio
+claude plugin install fuse-studio@fuse-studio
 ```
 
 **Update:**
 
 ```sh
-claude plugin marketplace update kira-studio
-claude plugin update kira-studio@kira-studio
+claude plugin marketplace update fuse-studio
+claude plugin update fuse-studio@fuse-studio
 ```
 
-**Local development:** use `claude --plugin-dir ./kira-studio` and, if installed, `claude plugin validate ./kira-studio`. No files are uploaded automatically by this package.
+**Local development:** use `claude --plugin-dir ./fuse-studio` and, if installed, `claude plugin validate ./fuse-studio`. No files are uploaded automatically by this package.
 
 ## What is included
 
-- **21 named skills/commands** (one default router; 20 explicitly invoked specialists).
-- **82 curated articles + 6 workflows** = **88 searchable references** (see [index](reference-index.md)).
+- **23 named skills/commands** (one default router; 22 explicitly invoked specialists).
+- **85 curated articles + 6 workflows** = **91 searchable references** (see [index](reference-index.md)).
 - **3 optional expert agents**: UI critic, network security reviewer, performance profiler.
 - **8 templates** and **5 Luau examples** (note: examples require integration/Studio testing).
 - **Local MCP** `search_knowledge` and `read_knowledge` (English/Russian, topical filtering, chunked reads), no HTTP or telemetry.
@@ -44,33 +44,33 @@ claude plugin update kira-studio@kira-studio
 
 | Command | What it does |
 |---|---|
-| `/kira-studio:ui` | Visual art direction, polished GUI, responsive layouts, state lifecycle |
-| `/kira-studio:ui-motion` | Fancy but robust animations, tweens, reduced motion |
-| `/kira-studio:gui-audit` | 40-point interface scorecard and prioritized improvements |
-| `/kira-studio:vfx` | Impact effects, particles, trails, lighting, camera, mobile tiers |
-| `/kira-studio:combat` | Shooting, melee, hit detection, lag compensation, anti-cheat |
-| `/kira-studio:build` | Feature implementation in strict Luau |
-| `/kira-studio:network` | Network authority, reliability, snapshots, prediction |
-| `/kira-studio:data` | DataStores, migrations, sessions, purchase correctness |
-| `/kira-studio:npc` | NPC behaviors, perception, pathfinding |
-| `/kira-studio:studio` | Safe live editing/playtesting if an external Studio MCP is available |
-| `/kira-studio:review` | Security and performance code audit |
-| `/kira-studio:optimize` | CPU/GPU/replication/GC profiling workflow |
-| `/kira-studio:benchmark` | Structured tests; prevents unproven performance claims |
+| `/fuse-studio:ui` | Visual art direction, polished GUI, responsive layouts, state lifecycle |
+| `/fuse-studio:ui-motion` | Fancy but robust animations, tweens, reduced motion |
+| `/fuse-studio:gui-audit` | 40-point interface scorecard and prioritized improvements |
+| `/fuse-studio:vfx` | Impact effects, particles, trails, lighting, camera, mobile tiers |
+| `/fuse-studio:combat` | Shooting, melee, hit detection, lag compensation, anti-cheat |
+| `/fuse-studio:build` | Feature implementation in strict Luau |
+| `/fuse-studio:network` | Network authority, reliability, snapshots, prediction |
+| `/fuse-studio:data` | DataStores, migrations, sessions, purchase correctness |
+| `/fuse-studio:npc` | NPC behaviors, perception, pathfinding |
+| `/fuse-studio:studio` | Safe live editing/playtesting if an external Studio MCP is available |
+| `/fuse-studio:review` | Security and performance code audit |
+| `/fuse-studio:optimize` | CPU/GPU/replication/GC profiling workflow |
+| `/fuse-studio:benchmark` | Structured tests; prevents unproven performance claims |
 
-Other named skills: `animate`, `economy`, `kira-studio`, `lighting`, `plan`, `publish`, `security`, `world`.
+Other named skills: `animate`, `economy`, `fuse-studio`, `lighting`, `plan`, `publish`, `security`, `world`.
 
 Example prompts:
 
 ```text
-/kira-studio:ui Create a cinematic sci-fi inventory GUI with mobile layout and controller support
-/kira-studio:ui-motion Make the shop open/close like a polished console game, never break under rapid clicks
-/kira-studio:combat Improve hit registration with server-side validation at high ping
-/kira-studio:vfx Design a readable electric sword finisher with low-end mobile fallback
-/kira-studio:review Audit every currency-awarding remote for exploits and duplicate grants
+/fuse-studio:ui Create a cinematic sci-fi inventory GUI with mobile layout and controller support
+/fuse-studio:ui-motion Make the shop open/close like a polished console game, never break under rapid clicks
+/fuse-studio:combat Improve hit registration with server-side validation at high ping
+/fuse-studio:vfx Design a readable electric sword finisher with low-end mobile fallback
+/fuse-studio:review Audit every currency-awarding remote for exploits and duplicate grants
 ```
 
-Claude can also automatically use the core `kira-studio` skill for Roblox tasks. The other commands are opt-in to minimize accidental heavy workflows. Specialized knowledge is loaded only when needed.
+Claude can also automatically use the core `fuse-studio` skill for Roblox tasks. The other commands are opt-in to minimize accidental heavy workflows. Specialized knowledge is loaded only when needed.
 
 ## Why the unified design matters
 
@@ -98,4 +98,16 @@ The local search benchmark verifies **reference relevance**, not whether Claude 
 
 ## Source and rights
 
-Copyright 2026 Kira Studio Contributors. MIT license. Original projects and their MIT notices are credited in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The new documentation is an original synthesis and expansion, not a complete mirror; review upstream changes and Roblox API deprecations periodically. Neither Roblox Corporation nor Anthropic sponsors this project.
+Copyright 2026 Fuse Studio Contributors. MIT license. Original projects and their MIT notices are credited in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The new documentation is an original synthesis and expansion, not a complete mirror; review upstream changes and Roblox API deprecations periodically. Neither Roblox Corporation nor Anthropic sponsors this project.
+
+## GUI style selection and bundled Stud UI (2.1)
+
+For a new GUI with no style or reference, Fuse Studio asks the developer **once**: Stud, Premium Simulator, Modern Minimal, Glass/Aurora, Sci-Fi, Tactical HUD, Retro Pixel, Cartoon, Fantasy or custom style? If style already exists, no repeat questions. Minor fixes skip the choice.
+
+- `/fuse-studio:ui-styles`: choose art direction.
+- `/fuse-studio:stud-ui`: use Stud immediately.
+- `/fuse-studio:ui`: use existing style, or ask once if undecided.
+
+Included **real MIT Stud UI Clean Roblox** source by TemporaryLooker22 in `vendor/stud-ui`: StudUI, StudMotion, 1022 icon registry, exact tokens, layouts, 6 builder/controller examples and licenses. Screenshot gallery remains upstream at https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox. See [Stud integration](docs/stud-ui-integration.md).
+
+**Repository rename:** plugin is now `fuse-studio`, but GitHub repository must separately be renamed in **Settings > General > Repository name** from `Kira-Studio` to `Fuse-Studio`. Until then use `/plugin marketplace add Demosand/Kira-Studio`; afterwards use `Demosand/Fuse-Studio`. In both cases install via `/plugin install fuse-studio@fuse-studio`.

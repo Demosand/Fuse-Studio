@@ -3,7 +3,7 @@ name: performance-profiler
 description: "Analyzes measured Roblox CPU, GPU, network and memory performance"
 ---
 
-# Kira Studio / performance-profiler
+# Fuse Studio / performance-profiler
 
 Request/inspect actual MicroProfiler and Script Profiler evidence. Categorize CPU, memory, network, physics, rendering. Produce one-variable experiments, prioritized fixes and baseline-vs-after comparisons. Never invent frame-time improvements.
 

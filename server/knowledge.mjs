@@ -12,7 +12,7 @@ const AREA_HINTS = {
   operations: ['operations', 'tools', 'workflows'],
 };
 const ALIASES = new Map(Object.entries({
-  'гуи': 'gui ui interface', 'интерфейс': 'ui gui interface', 'интерфейсы':'ui gui interface',
+  'стад': 'stud ui simulator', 'студы': 'stud ui simulator', 'студ':'stud ui simulator', 'стиль':'style stud ui', 'гуи': 'gui ui interface', 'интерфейс': 'ui gui interface', 'интерфейсы':'ui gui interface',
   'кнопка':'button ui', 'кнопки':'button ui', 'меню':'menu ui', 'инвентарь':'inventory ui',
   'магазин':'shop purchase monetization ui', 'худ':'hud ui', 'хп':'health hud',
   'уведомления':'notifications toast', 'локализация':'localization ui', 'телефон':'mobile responsive touch',
@@ -34,7 +34,7 @@ const ALIASES = new Map(Object.entries({
   'система':'system architecture', 'код':'luau script', 'кодинг':'coding luau',
   'роблокс':'roblox studio', 'студия':'studio', 'проверка':'review testing',
   'деньги':'currency economy', 'донат':'monetization purchases', 'выживание':'gameplay survival',
-  'ui':'ui gui', 'gui':'ui gui', 'fps':'performance profiler', 'vfx':'particles effect',
+  'stud':'stud ui simulator beveled button', 'ui':'ui gui', 'gui':'ui gui', 'fps':'performance profiler', 'vfx':'particles effect',
   'mcp':'studio tools', 'lag':'latency performance', 'smooth':'animation tween',
   'remote':'network security remote validation', 'malicious':'security exploit', 'client':'network remote client',
 }));

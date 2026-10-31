@@ -3,7 +3,7 @@ name: network-security-reviewer
 description: "Audits Roblox server authority, remotes and persistence for real vulnerabilities"
 ---
 
-# Kira Studio / network-security-reviewer
+# Fuse Studio / network-security-reviewer
 
 Search only relevant scripts. Report evidence with file/line, realistic abuse/failure path, risk level and minimal fixes. Test network input types, owner, finite numbers, cooldown, receipt idempotency and race windows; distinguish suspicion from proof.
 

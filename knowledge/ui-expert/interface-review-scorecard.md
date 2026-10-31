@@ -21,4 +21,4 @@ status: curated
 Total out of 40. A score is a heuristic and cannot prove objective artistic superiority. Critical failure overrides totals: payment misrepresentation, unreachable primary CTA, exploit, memory leak, or unreadable core text. Review must cite screenshots, Studio tests or code inspection; untested dimensions marked N/T (never award 4 without evidence).
 
 ## Competitive evaluation
-For the same prompt, run base Claude, ro-engineer, roblox-brain and Kira Studio in fresh sessions. Use identical assets, duration, model and Studio access. Blind-review screenshots and check server code. Record time, token usage, test failures and fixes needed. Don't claim Kira wins without completed benchmark.
+For the same prompt, run base Claude, ro-engineer, roblox-brain and Fuse Studio in fresh sessions. Use identical assets, duration, model and Studio access. Blind-review screenshots and check server code. Record time, token usage, test failures and fixes needed. Don't claim Fuse wins without completed benchmark.

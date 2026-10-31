@@ -1,10 +1,10 @@
 {
-  "name": "kira-studio",
-  "displayName": "Kira Studio",
-  "version": "2.0.0",
+  "name": "fuse-studio",
+  "displayName": "Fuse Studio",
+  "version": "2.1.0",
   "description": "Unified Roblox Studio expert plugin: premium GUI, motion, VFX, strict Luau, networking, combat, security, data, workflows, local-first knowledge search.",
   "author": {
-    "name": "Kira Studio Contributors"
+    "name": "Fuse Studio Contributors"
   },
   "license": "MIT",
   "keywords": [

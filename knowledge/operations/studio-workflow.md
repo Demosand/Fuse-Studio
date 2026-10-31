@@ -6,7 +6,7 @@ area: operations
 
 # Studio tools, Rojo and development workflow
 
-**Kira Studio is not itself a Studio bridge.** It can use Roblox Studio tools already exposed to Claude by another MCP. Capabilities vary: inspect/grep scripts, edit instances, run Luau, playtest, read console, take screenshots. Discover actual tool names rather than assuming they exist.
+**Fuse Studio is not itself a Studio bridge.** It can use Roblox Studio tools already exposed to Claude by another MCP. Capabilities vary: inspect/grep scripts, edit instances, run Luau, playtest, read console, take screenshots. Discover actual tool names rather than assuming they exist.
 
 ## When Studio is connected
 

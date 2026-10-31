@@ -4,9 +4,12 @@ description: "Create polished premium Roblox UI/GUI: art direction, layout, anim
 disable-model-invocation: true
 ---
 
-# Kira Studio / UI Director
+# Fuse Studio / UI Director
 
 Task: $ARGUMENTS
+
+## 0. GUI style selection
+For a new interface without a chosen style or reference, ask the developer **one** concise question: Stud, Modern Minimal, Glass, Sci-Fi, Retro Pixel, Cartoon, Fantasy or custom/reference? If style is already chosen or existing project screens establish it, do not ask again; preserve that style. Follow `knowledge/ui-expert/style-selector` and `style-presets`. For Stud, use the original bundled source kit under `vendor/stud-ui/`, following `knowledge/ui-expert/stud-ui-design`. Explicit `/fuse-studio:stud-ui` chooses Stud immediately.
 
 ## 1. Discover and design
 Inspect existing GUI hierarchy, style assets, gameplay theme, screenshots, input modes. Choose explicit visual language and define typography, semantic color tokens, corner/stroke/spacing scale, states and visual hierarchy. Never invent uploaded asset IDs. For brand-new screens, produce a small art-direction plan internally and proceed; ask only on blocking ambiguity.

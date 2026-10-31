@@ -7,7 +7,7 @@ status: curated
 # Skill benchmark matrix and evidence
 
 ## Evaluation design
-Compare baseline Claude, ro-engineer, roblox-brain, Kira Studio under same model, reasoning effort, context, project, MCP, resources and target task; use fresh sessions with random task order to mitigate contamination. Track output tokens/tool calls separately. Predeclare success tests.
+Compare baseline Claude, ro-engineer, roblox-brain, Fuse Studio under same model, reasoning effort, context, project, MCP, resources and target task; use fresh sessions with random task order to mitigate contamination. Track output tokens/tool calls separately. Predeclare success tests.
 
 ## Task suite
 1. Build secure shop with idempotent ProcessReceipt.

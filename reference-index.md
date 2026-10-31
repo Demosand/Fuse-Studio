@@ -1,4 +1,4 @@
-# Kira Studio local reference catalog
+# Fuse Studio local reference catalog
 
 This index is for manual browsing; Claude should prefer local `search_knowledge` and load a small subset. All documents stay local. There are 88 searchable references including 82 knowledge articles and 6 workflows.
 
@@ -119,3 +119,10 @@ This index is for manual browsing; Claude should prefer local `search_knowledge`
 - [plan](workflows/plan.md)
 - [polish](workflows/polish.md)
 - [release](workflows/release.md)
+
+
+## New GUI style system (v2.1)
+- `knowledge/ui-expert/style-selector` (one question only when undecided)
+- `knowledge/ui-expert/style-presets` (Stud, Minimal, Glass, Sci-Fi, Tactical, Pixel, Cartoon, Fantasy)
+- `knowledge/ui-expert/stud-ui-design` (real vendored Stud UI kit)
+- `vendor/stud-ui` (original MIT Luau and documented examples; read only when Stud chosen)

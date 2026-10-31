@@ -1,6 +1,6 @@
 {
-  "name": "kira-studio-plugin",
-  "version": "2.0.0",
+  "name": "fuse-studio-plugin",
+  "version": "2.1.0",
   "private": true,
   "type": "module",
   "description": "Local-first Roblox knowledge server for Claude Code",

@@ -1,3 +1,11 @@
+# 2.1.0 — Fuse Studio and Stud UI
+
+- Rename plugin and MCP to fuse-studio; 23 specialist skills.
+- Ask developer once for new GUI art direction if undecided (Stud, Minimal, Glass, Sci-Fi, Pixel, Cartoon, Fantasy and more).
+- Bundle source modules StudUI, StudMotion, 1022 icons, docs and six examples, preserving MIT and third-party notices.
+- Add /fuse-studio:stud-ui and /fuse-studio:ui-styles commands.
+- GitHub repository slug must be renamed separately in repository Settings.
+
 # Changelog
 
 ## 2.0.0 — 2026-10-31

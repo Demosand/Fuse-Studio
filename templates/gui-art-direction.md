@@ -10,3 +10,5 @@
 - Network authority/data binding:
 - Screenshot / visual acceptance matrix:
 - Performance and cleanup tests:
+
+For a new GUI of unknown style, follow `knowledge/ui-expert/style-selector` once and persist the result in `docs/gui-style.md` when appropriate.

@@ -1,4 +1,4 @@
-# Kira Studio Luau examples
+# Fuse Studio Luau examples
 
 These snippets illustrate safe design patterns and are NOT drop-in complete games. Each sample needs Studio API validation and integration with your project's actual hierarchy. The `.luau` source files were reviewed structurally but not run in Roblox Studio here.
 

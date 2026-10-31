@@ -15,7 +15,7 @@ test('all reference docs readable, nonempty, and uniquely identified',()=>{
 test('specialist skills all have front matter and manual invocation',()=>{
  const names=files('skills');assert.ok(names.length>=20);
  for(const name of names){const raw=fs.readFileSync(path.join(root,'skills',name,'SKILL.md'),'utf8');assert.match(raw,/^---\nname: [\w-]+/);
-  if(name!=='kira-studio')assert.match(raw,/disable-model-invocation: true/,name);
+  if(name!=='fuse-studio')assert.match(raw,/disable-model-invocation: true/,name);
  }
 });
 test('read chunks reconstruct source without lost content',()=>{
@@ -37,5 +37,5 @@ test('MCP is local-only and plugin has no telemetry endpoints',()=>{
  const code=fs.readFileSync(path.join(root,'server','index.mjs'),'utf8');
  for(const unsafe of ['fetch(', 'https.request(', 'http.request(', 'child_process'])assert.ok(!code.includes(unsafe),unsafe);
  const mcp=JSON.parse(fs.readFileSync(path.join(root,'.mcp.json'),'utf8'));
- assert.equal(mcp.mcpServers['kira-studio-knowledge'].command,'node');
+ assert.equal(mcp.mcpServers['fuse-studio-knowledge'].command,'node');
 });

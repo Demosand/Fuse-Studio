@@ -4,7 +4,7 @@ description: "Create premium readable performant Roblox VFX, hit impacts, trails
 disable-model-invocation: true
 ---
 
-# Kira Studio / VFX Director
+# Fuse Studio / VFX Director
 
 Task: $ARGUMENTS
 

@@ -1,12 +1,12 @@
 {
-  "name": "kira-studio",
-  "description": "Kira Studio: Roblox/Luau engineering, design and art knowledge",
+  "name": "fuse-studio",
+  "description": "Fuse Studio: Roblox/Luau engineering, design and art knowledge",
   "owner": {
-    "name": "Kira Studio Contributors"
+    "name": "Fuse Studio Contributors"
   },
   "plugins": [
     {
-      "name": "kira-studio",
+      "name": "fuse-studio",
       "source": "./",
       "description": "One privacy-first, token-aware Roblox engineering and creative toolbox",
       "category": "game-development",

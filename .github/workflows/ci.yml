@@ -1,4 +1,4 @@
-name: Kira Studio Quality
+name: Fuse Studio Quality
 on:
   push:
   pull_request:

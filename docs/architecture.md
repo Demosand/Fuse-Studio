@@ -1,9 +1,9 @@
-# Kira Studio architecture
+# Fuse Studio architecture
 
 ```text
 Claude Code
-  └─ plugin kira-studio
-       ├─ skills/kira-studio       auto-invoked for Roblox questions
+  └─ plugin fuse-studio
+       ├─ skills/fuse-studio       auto-invoked for Roblox questions
        ├─ skills/{build,ui,vfx,review,optimize,plan}  user invoked
        └─ local MCP server (node, stdio)
             ├─ search_knowledge(query) -> best topic + excerpts

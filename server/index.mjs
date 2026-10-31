@@ -11,7 +11,7 @@ const TOOLS=[
  {name:'read_knowledge',description:'Read a specific local reference returned by search_knowledge, chunked by part (0-based). No network. Use only when needed.',inputSchema:{type:'object',properties:{id:{type:'string'},part:{type:'integer',minimum:0,maximum:100,default:0}},required:['id'],additionalProperties:false}}
 ];
 function handle(method,params={}){
- if(method==='initialize')return {protocolVersion:params.protocolVersion||'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'kira-studio-knowledge',version:VERSION},instructions:'Read-only, no telemetry. Search targeted Roblox issues and read relevant chunks only. Knowledge is guidance, not tested project code. Verify latest Roblox APIs and user project.'};
+ if(method==='initialize')return {protocolVersion:params.protocolVersion||'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'fuse-studio-knowledge',version:VERSION},instructions:'Read-only, no telemetry. Search targeted Roblox issues and read relevant chunks only. Knowledge is guidance, not tested project code. Verify latest Roblox APIs and user project.'};
  if(method==='ping')return {};
  if(method==='tools/list')return {tools:TOOLS};
  if(method==='tools/call'){
@@ -44,6 +44,6 @@ function processLine(line){
  let p;try{p=JSON.parse(line);}catch{send({jsonrpc:'2.0',id:null,error:{code:-32700,message:'Parse error'}});return;}
  if(!p||typeof p!=='object'||!Object.prototype.hasOwnProperty.call(p,'id'))return;
  try{const out=handle(p.method,p.params);if(out===null)send({jsonrpc:'2.0',id:p.id,error:{code:-32601,message:'Method not found'}});else send({jsonrpc:'2.0',id:p.id,result:out});}
- catch(e){process.stderr.write(`[kira-studio] ${e?.message||'internal error'}\n`);send({jsonrpc:'2.0',id:p.id,error:{code:-32603,message:'Internal error'}});}
+ catch(e){process.stderr.write(`[fuse-studio] ${e?.message||'internal error'}\n`);send({jsonrpc:'2.0',id:p.id,error:{code:-32603,message:'Internal error'}});}
 }
-let pending='';process.stdin.setEncoding('utf8');process.stdin.on('data',chunk=>{pending+=chunk;if(pending.length>2*1024*1024){process.stderr.write('[kira-studio] oversize input\n');pending='';return;}let i;while((i=pending.indexOf('\n'))!==-1){processLine(pending.slice(0,i).trimEnd());pending=pending.slice(i+1);}});process.stdin.on('end',()=>{if(pending.trim())processLine(pending);});
+let pending='';process.stdin.setEncoding('utf8');process.stdin.on('data',chunk=>{pending+=chunk;if(pending.length>2*1024*1024){process.stderr.write('[fuse-studio] oversize input\n');pending='';return;}let i;while((i=pending.indexOf('\n'))!==-1){processLine(pending.slice(0,i).trimEnd());pending=pending.slice(i+1);}});process.stdin.on('end',()=>{if(pending.trim())processLine(pending);});

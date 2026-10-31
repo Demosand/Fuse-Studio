@@ -1,6 +1,6 @@
 # Third-party acknowledgements
 
-Kira Studio is an independent synthesis inspired by two MIT-licensed community projects. It is not their official merger, endorsement, or continuation. Conceptual coverage, conventions and some adapted instructional patterns derive from these projects. Their original notices are reproduced below.
+Fuse Studio is an independent synthesis inspired by two MIT-licensed community projects. It is not their official merger, endorsement, or continuation. Conceptual coverage, conventions and some adapted instructional patterns derive from these projects. Their original notices are reproduced below.
 
 ## ro-engineer
 - Source: https://github.com/excaldev/ro-engineer
@@ -57,3 +57,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+
+## Stud UI Clean Roblox (bundled)
+
+Original source and documentation under `vendor/stud-ui/` are from [TemporaryLooker22/Stud-UI-Clean-Roblox](https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox), Copyright (c) 2026 TemporaryLooker22, MIT license. Retain `vendor/stud-ui/LICENSE` and `vendor/stud-ui/THIRD_PARTY_NOTICES.md`. The `CheckUIIcons` registry comes from Check-UI Clean Roblox (MIT notice is in upstream THIRD_PARTY_NOTICES); hosted icons and assets remain subject to Roblox terms.
