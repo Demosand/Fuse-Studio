@@ -1,0 +1,40 @@
+{
+  "name": "fuse-studio",
+  "version": "2.3.0",
+  "description": "Roblox Studio engineering skills: Luau architecture, safe multiplayer, polished UI and Stud UI, VFX, optimization, audits, and a local read-only knowledge server.",
+  "author": {
+    "name": "Fuse Studio Contributors",
+    "url": "https://github.com/Demosand/Fuse-Studio"
+  },
+  "homepage": "https://github.com/Demosand/Fuse-Studio",
+  "repository": "https://github.com/Demosand/Fuse-Studio",
+  "license": "MIT",
+  "keywords": [
+    "roblox",
+    "luau",
+    "codex",
+    "game-development",
+    "stud-ui",
+    "vfx",
+    "gui"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.codex-mcp.json",
+  "interface": {
+    "displayName": "Fuse Studio",
+    "shortDescription": "Roblox Luau engineering, GUI, VFX and Stud UI",
+    "longDescription": "23 Roblox development skills, curated implementation references, Stud UI source kit, and local no-telemetry knowledge search.",
+    "developerName": "Fuse Studio Contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Demosand/Fuse-Studio",
+    "defaultPrompt": [
+      "Build a polished Roblox inventory. Ask which GUI style I want.",
+      "Use Stud UI to create a Roblox pet shop.",
+      "Review my Luau network code for security and performance."
+    ]
+  }
+}

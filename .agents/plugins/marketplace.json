@@ -1,0 +1,21 @@
+{
+  "name": "fuse-studio",
+  "interface": {
+    "displayName": "Fuse Studio"
+  },
+  "plugins": [
+    {
+      "name": "fuse-studio",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Demosand/Fuse-Studio.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,8 +1,24 @@
-# Fuse Studio 2.2 — Roblox-скиллы для Claude Code и Google Antigravity
+# Fuse Studio 2.3 — Roblox-скиллы для Codex, Claude Code и Google Antigravity
 
 **23 скилл-команды, 85 справочников, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
 
 Fuse Studio создан с учётом сильных сторон [ro-engineer](https://github.com/excaldev/ro-engineer) и [roblox-brain](https://github.com/AkitoDevs/roblox-brain), но это самостоятельная переработка и дополнение; **не буквальное объединение 100% файлов двух исходников**. Оригинальные MIT-уведомления: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Установка в OpenAI Codex
+
+Fuse Studio 2.3 поддерживает **Codex CLI и совместимые приложения Codex** как полноценный плагин: 23 скилла, Stud UI, вся локальная база знаний и MCP.
+
+Выполни в терминале:
+
+```powershell
+codex plugin marketplace add Demosand/Fuse-Studio
+codex plugin add fuse-studio@fuse-studio
+codex plugin list
+```
+
+После установки открой Codex или перезапусти его. В диалоге используй `/skills` или упомяни `$fuse-studio`, `$stud-ui`, `$ui`, `$combat`, `$vfx` — модель также может сама выбрать подходящий навык. Node.js 18+ необходим только для встроенного локального MCP-поиска.
+
+**Не нужно вручную копировать 23 папки навыков.** Для обновления: `codex plugin marketplace upgrade fuse-studio`. Полная инструкция: [docs/codex.md](docs/codex.md).
 
 ## Установка в Google Antigravity
 
@@ -23,7 +39,7 @@ New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins" | Out-Null; g
 
 После установки зайди в **Customizations → Installed**. Для обновления папки: `git -C "$HOME\.gemini\config\plugins\fuse-studio" pull --ff-only`. Команды в Antigravity: `/fuse-studio`, `/ui`, `/stud-ui`, `/combat`, `/vfx` и другие — **без префикса** `fuse-studio:`. Для поиска по базе нужен Node.js 18+, сами скиллы работают и без него.
 
-Подробная инструкция: **[docs/antigravity.md](docs/antigravity.md)**. Claude Code продолжает работать как раньше.
+Подробная инструкция: **[docs/antigravity.md](docs/antigravity.md)**. Claude Code продолжает работать как раньше. Codex подключается отдельно.
 
 ## Установка в Claude Code
 

@@ -2,7 +2,7 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "fuse-studio",
   "displayName": "Fuse Studio",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Roblox Studio engineering and creative toolkit: strict Luau, game systems, security, UI styles (including Stud UI), VFX, design, optimization and local knowledge search.",
   "suggestedPrompts": [
     "Create a polished Roblox inventory GUI and ask me which UI style to use.",

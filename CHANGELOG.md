@@ -1,3 +1,11 @@
+# 2.3.0 — OpenAI Codex support
+
+- Portable Codex Agent Plugins manifest: `plugin.json`, `mcp.json`.
+- Backwards-compatible `.codex-plugin/plugin.json` and separate plugin-relative MCP configuration.
+- GitHub repository marketplace in `.agents/plugins/marketplace.json`.
+- Two-command installation: `codex plugin marketplace add Demosand/Fuse-Studio` then `codex plugin add fuse-studio@fuse-studio`.
+- Codex usage guide and cross-client consistency tests. Claude Code and Antigravity remain supported.
+
 # 2.2.0 — Google Antigravity native support
 
 - Native multi-provider plugin manifest in `.antigravity-plugin/plugin.json` with Antigravity starter prompts.

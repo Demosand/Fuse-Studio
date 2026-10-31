@@ -1,9 +1,9 @@
 {
   "name": "fuse-studio-plugin",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "private": true,
   "type": "module",
-  "description": "Local-first Roblox/Luau knowledge server and skills for Claude Code and Google Antigravity",
+  "description": "Roblox engineering skills and local knowledge MCP for Claude Code, Antigravity and Codex",
   "engines": {
     "node": ">=18"
   },

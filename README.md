@@ -1,8 +1,22 @@
-# Fuse Studio v2.2 — Roblox Studio toolkit for Claude Code & Google Antigravity
+# Fuse Studio v2.3 — Roblox Studio toolkit for Claude Code, Google Antigravity & OpenAI Codex
 
 **One local-first plugin for premium GUI, VFX, Lua(u) engineering, game design, secure multiplayer and Roblox Studio workflows.**
 
 > Independent plugin inspired by the MIT-licensed [ro-engineer](https://github.com/excaldev/ro-engineer) and [roblox-brain](https://github.com/AkitoDevs/roblox-brain), substantially extended with original specialist guides and workflows. Not an official upstream fork, endorsement or complete verbatim mirror. See [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## OpenAI Codex installation (2.3)
+
+**Full native plugin**, including all 23 skills, Stud UI, curated references and a local, read-only knowledge MCP. In a terminal with the current Codex CLI:
+
+```powershell
+codex plugin marketplace add Demosand/Fuse-Studio
+codex plugin add fuse-studio@fuse-studio
+codex plugin list
+```
+
+Restart your Codex session if needed. Use `/skills` or mention a skill such as `$fuse-studio`, `$ui`, `$stud-ui`, `$combat`, `$vfx` or `$optimize` in Codex. **Node.js 18+** is needed for local knowledge search; basic skill guidance works without it. Codex CLI and compatible desktop clients can use repo marketplaces; installation is not an official Plugin Directory listing.
+
+The package uses portable `plugin.json` + `mcp.json`, plus a compatibility fallback in `.codex-plugin/`. Codex's MCP uses plugin-relative `cwd: "."` rather than Claude's `CLAUDE_PLUGIN_ROOT`. See [Codex installation and troubleshooting](docs/codex.md).
 
 ## Google Antigravity installation (2.2)
 
@@ -23,7 +37,7 @@ New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins" | Out-Null; g
 
 Then open **Customizations → Installed** to find Fuse Studio. For Windows IDE updates, use `git -C "$HOME\.gemini\config\plugins\fuse-studio" pull --ff-only`. Skills invoke as `/fuse-studio`, `/stud-ui`, `/ui`, `/combat`, etc. in Antigravity (not Claude Code's `/fuse-studio:ui` syntax). Node.js 18+ is needed for local MCP search. More options and troubleshooting: **[Antigravity guide](docs/antigravity.md)**.
 
-The two providers remain independent: Antigravity uses `.antigravity-plugin/plugin.json` and `mcp_config.json`, while Claude Code uses `.claude-plugin/` and `.mcp.json`. Both share the same knowledge and Lua code.
+The provider manifests remain independent: Antigravity uses `.antigravity-plugin/plugin.json` and `mcp_config.json`, Claude Code uses `.claude-plugin/` and `.mcp.json`, and Codex uses the root `plugin.json` and `mcp.json`. All share knowledge and Luau code.
 
 ## Claude Code installation
 
