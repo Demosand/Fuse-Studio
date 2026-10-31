@@ -9,7 +9,7 @@
 Publish these files at the **root** of a public GitHub repository named `fuse-studio`. Keep hidden `.claude-plugin/` and `.mcp.json` files. In Claude Code:
 
 ```text
-/plugin marketplace add Demosand/Kira-Studio
+/plugin marketplace add Demosand/Fuse-Studio
 /plugin install fuse-studio@fuse-studio
 ```
 
@@ -18,7 +18,7 @@ Restart Claude Code or reload plugins. Requires Node.js **18+** for the optional
 **CLI:**
 
 ```sh
-claude plugin marketplace add Demosand/Kira-Studio
+claude plugin marketplace add Demosand/Fuse-Studio
 claude plugin install fuse-studio@fuse-studio
 ```
 
@@ -110,4 +110,4 @@ For a new GUI with no style or reference, Fuse Studio asks the developer **once*
 
 Included **real MIT Stud UI Clean Roblox** source by TemporaryLooker22 in `vendor/stud-ui`: StudUI, StudMotion, 1022 icon registry, exact tokens, layouts, 6 builder/controller examples and licenses. Screenshot gallery remains upstream at https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox. See [Stud integration](docs/stud-ui-integration.md).
 
-**Repository rename:** plugin is now `fuse-studio`, but GitHub repository must separately be renamed in **Settings > General > Repository name** from `Kira-Studio` to `Fuse-Studio`. Until then use `/plugin marketplace add Demosand/Kira-Studio`; afterwards use `Demosand/Fuse-Studio`. In both cases install via `/plugin install fuse-studio@fuse-studio`.
+**Official repository:** [Demosand/Fuse-Studio](https://github.com/Demosand/Fuse-Studio). Install with `/plugin marketplace add Demosand/Fuse-Studio` followed by `/plugin install fuse-studio@fuse-studio`.
