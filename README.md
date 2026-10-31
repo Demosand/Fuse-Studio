@@ -1,10 +1,31 @@
-# Fuse Studio v2.1 — Roblox Studio super toolkit for Claude Code
+# Fuse Studio v2.2 — Roblox Studio toolkit for Claude Code & Google Antigravity
 
 **One local-first plugin for premium GUI, VFX, Lua(u) engineering, game design, secure multiplayer and Roblox Studio workflows.**
 
 > Independent plugin inspired by the MIT-licensed [ro-engineer](https://github.com/excaldev/ro-engineer) and [roblox-brain](https://github.com/AkitoDevs/roblox-brain), substantially extended with original specialist guides and workflows. Not an official upstream fork, endorsement or complete verbatim mirror. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-## Install from GitHub
+## Google Antigravity installation (2.2)
+
+**Native plugin support:** installs all 23 skills, 3 expert agents and the local read-only knowledge MCP using Antigravity's own plugin system. No conversion or manual copying of individual skills.
+
+**Antigravity CLI (single command):**
+
+```sh
+agy plugin install https://github.com/Demosand/Fuse-Studio
+agy plugin list
+```
+
+**Antigravity IDE on Windows without `agy`:** run in PowerShell (Git required):
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins" | Out-Null; git clone https://github.com/Demosand/Fuse-Studio.git "$HOME\.gemini\config\plugins\fuse-studio"
+```
+
+Then open **Customizations → Installed** to find Fuse Studio. For Windows IDE updates, use `git -C "$HOME\.gemini\config\plugins\fuse-studio" pull --ff-only`. Skills invoke as `/fuse-studio`, `/stud-ui`, `/ui`, `/combat`, etc. in Antigravity (not Claude Code's `/fuse-studio:ui` syntax). Node.js 18+ is needed for local MCP search. More options and troubleshooting: **[Antigravity guide](docs/antigravity.md)**.
+
+The two providers remain independent: Antigravity uses `.antigravity-plugin/plugin.json` and `mcp_config.json`, while Claude Code uses `.claude-plugin/` and `.mcp.json`. Both share the same knowledge and Lua code.
+
+## Claude Code installation
 
 Publish these files at the **root** of a public GitHub repository named `fuse-studio`. Keep hidden `.claude-plugin/` and `.mcp.json` files. In Claude Code:
 

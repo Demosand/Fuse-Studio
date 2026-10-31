@@ -1,0 +1,29 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "fuse-studio",
+  "displayName": "Fuse Studio",
+  "version": "2.2.0",
+  "description": "Roblox Studio engineering and creative toolkit: strict Luau, game systems, security, UI styles (including Stud UI), VFX, design, optimization and local knowledge search.",
+  "suggestedPrompts": [
+    "Create a polished Roblox inventory GUI and ask me which UI style to use.",
+    "Review my Roblox Luau multiplayer code for security and performance issues.",
+    "Create a shop GUI using Stud UI and test its mobile layout."
+  ],
+  "author": {
+    "name": "Fuse Studio Contributors",
+    "url": "https://github.com/Demosand/Fuse-Studio"
+  },
+  "homepage": "https://github.com/Demosand/Fuse-Studio",
+  "repository": "https://github.com/Demosand/Fuse-Studio",
+  "license": "MIT",
+  "keywords": [
+    "roblox",
+    "luau",
+    "studio",
+    "gui",
+    "stud-ui",
+    "vfx",
+    "game-development",
+    "antigravity"
+  ]
+}

@@ -1,3 +1,11 @@
+# 2.2.0 — Google Antigravity native support
+
+- Native multi-provider plugin manifest in `.antigravity-plugin/plugin.json` with Antigravity starter prompts.
+- Automatic local Node.js knowledge MCP via Antigravity `mcp_config.json` and `${PLUGIN_ROOT}`.
+- Single-command GitHub install using `agy plugin install https://github.com/Demosand/Fuse-Studio`.
+- Windows IDE global plugin installation instructions and detailed `docs/antigravity.md` guide.
+- Cross-provider manifest and skill-discovery tests; Claude Code installation unchanged.
+
 # 2.1.0 — Fuse Studio and Stud UI
 
 - Rename plugin and MCP to fuse-studio; 23 specialist skills.

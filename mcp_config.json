@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "fuse-studio-knowledge": {
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/server/index.mjs"
+      ]
+    }
+  }
+}

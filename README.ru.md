@@ -1,12 +1,33 @@
-# Fuse Studio 2.1 — усиленный набор навыков Roblox для Claude Code
+# Fuse Studio 2.2 — Roblox-скиллы для Claude Code и Google Antigravity
 
-**21 скилл-команда, 82 справочника, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
+**23 скилл-команды, 85 справочников, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
 
 Fuse Studio создан с учётом сильных сторон [ro-engineer](https://github.com/excaldev/ro-engineer) и [roblox-brain](https://github.com/AkitoDevs/roblox-brain), но это самостоятельная переработка и дополнение; **не буквальное объединение 100% файлов двух исходников**. Оригинальные MIT-уведомления: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Установка из GitHub
+## Установка в Google Antigravity
 
-Создайте репозиторий `fuse-studio`. Распакуйте ZIP и загрузите **содержимое архива в корень репозитория**. Скрытые файлы `.claude-plugin` и `.mcp.json` обязательны.
+**Теперь Fuse Studio — нативный плагин Antigravity:** 23 скилла, 3 агента и локальный MCP-поиск знаний.
+
+**Если установлен Antigravity CLI (`agy`):**
+
+```powershell
+agy plugin install https://github.com/Demosand/Fuse-Studio
+agy plugin list
+```
+
+**Для приложения Antigravity на Windows без CLI**, открой PowerShell (нужен Git) и выполни:
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins" | Out-Null; git clone https://github.com/Demosand/Fuse-Studio.git "$HOME\.gemini\config\plugins\fuse-studio"
+```
+
+После установки зайди в **Customizations → Installed**. Для обновления папки: `git -C "$HOME\.gemini\config\plugins\fuse-studio" pull --ff-only`. Команды в Antigravity: `/fuse-studio`, `/ui`, `/stud-ui`, `/combat`, `/vfx` и другие — **без префикса** `fuse-studio:`. Для поиска по базе нужен Node.js 18+, сами скиллы работают и без него.
+
+Подробная инструкция: **[docs/antigravity.md](docs/antigravity.md)**. Claude Code продолжает работать как раньше.
+
+## Установка в Claude Code
+
+Плагин уже опубликован в GitHub. Для установки Claude Code используй команды ниже.
 
 В Claude Code:
 

@@ -8,7 +8,11 @@ function json(file) { return JSON.parse(fs.readFileSync(path.join(root, file), '
 const plugin = json('.claude-plugin/plugin.json');
 const marketplace = json('.claude-plugin/marketplace.json');
 const mcp = json('.mcp.json');
+const agPlugin=json('.antigravity-plugin/plugin.json');
+const agMcp=json('mcp_config.json');
 const errors = [];
+if(agPlugin.name!==plugin.name||agPlugin.version!==plugin.version)errors.push('Antigravity manifest/version mismatch');
+if(agMcp.mcpServers?.['fuse-studio-knowledge']?.args?.[0]!=='${PLUGIN_ROOT}/server/index.mjs')errors.push('Antigravity MCP path invalid');
 if (plugin.name !== 'fuse-studio') errors.push('plugin name mismatch');
 if (marketplace.name !== 'fuse-studio') errors.push('marketplace name mismatch');
 if (!marketplace.plugins?.some(p => p.name === plugin.name && p.source === './')) errors.push('marketplace source invalid');
@@ -27,8 +31,8 @@ if (new Set(ids).size !== ids.length) errors.push('duplicate document ids');
 for (const id of ['knowledge/engineering/network-security','knowledge/gameplay/combat','knowledge/presentation/ui-design','knowledge/presentation/vfx','workflows/audit']) {
   if (!ids.includes(id)) errors.push('missing document: '+id);
 }
-for (const file of ['LICENSE','THIRD_PARTY_NOTICES.md','README.md','README.ru.md','server/index.mjs','vendor/stud-ui/LICENSE','vendor/stud-ui/src/StudUI.luau','vendor/stud-ui/src/StudMotion.luau','vendor/stud-ui/src/CheckUIIcons.luau']) {
+for (const file of ['LICENSE','THIRD_PARTY_NOTICES.md','README.md','README.ru.md','docs/antigravity.md','server/index.mjs','vendor/stud-ui/LICENSE','vendor/stud-ui/src/StudUI.luau','vendor/stud-ui/src/StudMotion.luau','vendor/stud-ui/src/CheckUIIcons.luau']) {
   if (!exists(file)) errors.push('missing '+file);
 }
 if (errors.length) { console.error(errors.join('\n')); process.exitCode=1; }
-else console.log(`Fuse Studio check OK: ${docs.length} local references, ${skills.length} skills, 2 read-only MCP tools.`);
+else console.log(`Fuse Studio check OK: ${docs.length} local references, ${skills.length} skills, 2 read-only MCP tools, Claude Code + Antigravity.`);
