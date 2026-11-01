@@ -120,22 +120,17 @@ This index is for manual browsing; Claude should prefer local `search_knowledge`
 - [polish](workflows/polish.md)
 - [release](workflows/release.md)
 
-
 ## New GUI style system (v2.1)
 - `knowledge/ui-expert/style-selector` (one question only when undecided)
 - `knowledge/ui-expert/style-presets` (Stud, Minimal, Glass, Sci-Fi, Tactical, Pixel, Cartoon, Fantasy)
 - `knowledge/ui-expert/stud-ui-design` (real vendored Stud UI kit)
 - `vendor/stud-ui` (original MIT Luau and documented examples; read only when Stud chosen)
 
-
 ## Fuse 2.4 visual references and asset safety
 - knowledge/visual-references/roblox-ai-guide: curated linked gallery, 25 styles, UI/Stud reference material, rights-aware.
 - knowledge/ui-expert/stud-asset-replacement: map of 19 user-reported missing Stud IDs, fallback ideas and Studio verification.
 - docs/stud-asset-audit.md: manual runtime verification and safe adapter instructions.
 - vendor/stud-ui/src/{StudUISafe,StudIconsSafe,StudAssetGuard}.luau: no-image safe wrappers (original MIT files unchanged).
-
-For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).
-
 
 ## Fuse 2.5 — Complete visual reference metadata (12,186 upstream files)
 - `catalog/roblox-ai/manifest.json`: pinned upstream commit and category counts.

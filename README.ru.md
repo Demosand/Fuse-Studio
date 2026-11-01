@@ -12,7 +12,6 @@ Fuse Studio создан с учётом сильных сторон [ro-enginee
 
 Он не требует Git или Codex CLI. Для работы локального MCP-поиска понадобится Node.js 18+. Подробности: [docs/codex.md](docs/codex.md).
 
-
 Fuse Studio 2.3 поддерживает **Codex CLI и совместимые приложения Codex** как полноценный плагин: 25 скиллов, Stud UI, вся локальная база знаний и MCP.
 
 **Если установлен Codex CLI**, можно использовать команды:
@@ -125,5 +124,3 @@ New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins" | Out-Null; g
 **Stud UI:** добавлен собственный `StudNativeIcons.luau` — нарисованные встроенными Roblox GUI-элементами корзина магазина, игровая валюта, геймпад и нейтральная социальная иконка; банан — emoji-вариант с возможностью замены собственным изображением. Также работают уже созданные замены Stud-текстуры, шапки магазина и восьми панелей редкости. Для установки новых интерфейсов нужны семь ModuleScripts: StudUI, StudMotion, CheckUIIcons, StudAssetGuard, StudUISafe, StudIconsSafe, StudNativeIcons. Это **не новые проверенные Asset ID**: все функции без сторонней картинки. Оригинальные MIT-модули сохранены.
 
 Быстрый поиск без MCP: `npm run refs:search -- stud shop --section=stud`. Обновление каталога при желании: `npm run refs:update`. **Live-тест в Roblox Studio пока не проведён.**
-
-For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

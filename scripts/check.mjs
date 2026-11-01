@@ -46,5 +46,3 @@ for (const file of ['LICENSE','THIRD_PARTY_NOTICES.md','README.md','README.ru.md
 }
 if (errors.length) { console.error(errors.join('\n')); process.exitCode=1; }
 else console.log(`Fuse Studio check OK: ${docs.length} local references, ${skills.length} skills, 4 read-only MCP tools, 25 skills, 12,186 indexed visual source paths and safe native icons.`);
-
-For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

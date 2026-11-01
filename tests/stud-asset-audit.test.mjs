@@ -48,5 +48,3 @@ test('native icon fallbacks for basket, currency, gamepad and social are present
  assert.ok(icons.includes('Guard.NativeToken'));
  assert.ok(ui.includes('Native.Draw'));
 });
-
-For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

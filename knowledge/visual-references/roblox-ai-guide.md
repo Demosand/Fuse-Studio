@@ -28,7 +28,5 @@ This is primarily visual research, NOT a Luau coding skillset. Upstream README r
 
 Style categories: studs, simulator, cartoon, fantasy, sci-fi, pixel, retro-pixel, glass, dark-pro, horror, anime, medieval, cyberpunk, kawaii, pirate, space, candy, western, winter, survival, speed, sports, tycoon, tower-defense, input-prompts.
 
-For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).
-
 ## Full offline filename catalog (Fuse 2.5)
 Now ALL source paths are indexed in `catalog/roblox-ai/paths/*.txt` with pinned SHA in `catalog/roblox-ai/manifest.json`: 11,968 images, 5 clips, 213 Markdown descriptions. Use local MCP `search_visual_references({query,section,kind,limit,offset})` and `list_visual_categories()`. Retrieve just 3–5 relevant URLs per task; visualize actual files with a supported vision/browser tool before claiming what they depict. The index doesn't contain media and does not convey reproduction rights. More details: docs/visual-references.md.
