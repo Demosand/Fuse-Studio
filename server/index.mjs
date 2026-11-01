@@ -40,7 +40,12 @@ function handle(method,params={}){
   if(name==='search_visual_references'){
     try{
       const res=searchVisualReferences(a.query??'',{section:a.section??'all',kind:a.kind??'all',limit:a.limit??6,offset:a.offset??0});
-      return result(JSON.stringify(res,null,2).slice(0,RESULT_LIMIT));
+      let payload=JSON.stringify(res);
+      while(payload.length>RESULT_LIMIT && res.results.length>1){
+        res.results.pop();res.nextOffset=res.offset+res.results.length;res.truncated=true;
+        payload=JSON.stringify(res);
+      }
+      return result(payload);
     }catch(e){return result(String(e?.message||'Invalid query'),true);}
   }
   if(name==='list_visual_categories')return result(JSON.stringify(visualReferenceOverview(),null,2).slice(0,RESULT_LIMIT));
