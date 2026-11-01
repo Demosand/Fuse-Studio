@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "fuse-studio",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Roblox Studio engineering skills: Luau architecture, safe multiplayer, polished UI and Stud UI, VFX, optimization, audits, and a local read-only knowledge server.",
   "author": {
     "name": "Fuse Studio Contributors",

@@ -1,6 +1,6 @@
 {
   "name": "fuse-studio-plugin",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "private": true,
   "type": "module",
   "description": "Roblox engineering skills and local knowledge MCP for Claude Code, Antigravity and Codex",

@@ -1,4 +1,4 @@
-# Fuse Studio 2.3 — Roblox-скиллы для Codex, Claude Code и Google Antigravity
+# Fuse Studio 2.3.1 — Roblox-скиллы для Codex, Claude Code и Google Antigravity
 
 **23 скилл-команды, 85 справочников, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
 
@@ -6,9 +6,16 @@ Fuse Studio создан с учётом сильных сторон [ro-enginee
 
 ## Установка в OpenAI Codex
 
+### Установка в приложении Codex без CLI (Windows)
+
+**CLI устанавливать не нужно.** Скачай [ZIP с Fuse Studio](https://github.com/Demosand/Fuse-Studio/archive/refs/heads/main.zip), распакуй и запусти двойным кликом `scripts/install-codex-app.cmd`. Установщик сохранит другие плагины в персональном маркетплейсе и сделает резервную копию конфигурации. Перезапусти Codex, открой **Plugins / Каталог плагинов** → **Personal Plugins** (или свой текущий персональный маркетплейс) → **Fuse Studio** → **Install**.
+
+Он не требует Git или Codex CLI. Для работы локального MCP-поиска понадобится Node.js 18+. Подробности: [docs/codex.md](docs/codex.md).
+
+
 Fuse Studio 2.3 поддерживает **Codex CLI и совместимые приложения Codex** как полноценный плагин: 23 скилла, Stud UI, вся локальная база знаний и MCP.
 
-Выполни в терминале:
+**Если установлен Codex CLI**, можно использовать команды:
 
 ```powershell
 codex plugin marketplace add Demosand/Fuse-Studio

@@ -1,7 +1,7 @@
 {
   "name": "fuse-studio",
   "displayName": "Fuse Studio",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Unified Roblox Studio expert plugin: premium GUI, motion, VFX, strict Luau, networking, combat, security, data, workflows, local-first knowledge search.",
   "author": {
     "name": "Fuse Studio Contributors"

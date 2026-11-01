@@ -1,10 +1,12 @@
-# Fuse Studio v2.3 — Roblox Studio toolkit for Claude Code, Google Antigravity & OpenAI Codex
+# Fuse Studio v2.3.1 — Roblox Studio toolkit for Claude Code, Google Antigravity & OpenAI Codex
 
 **One local-first plugin for premium GUI, VFX, Lua(u) engineering, game design, secure multiplayer and Roblox Studio workflows.**
 
 > Independent plugin inspired by the MIT-licensed [ro-engineer](https://github.com/excaldev/ro-engineer) and [roblox-brain](https://github.com/AkitoDevs/roblox-brain), substantially extended with original specialist guides and workflows. Not an official upstream fork, endorsement or complete verbatim mirror. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-## OpenAI Codex installation (2.3)
+## OpenAI Codex installation (2.3.1)
+
+**Codex desktop app only (NO CLI / NO Git required):** Download the repository ZIP from [GitHub](https://github.com/Demosand/Fuse-Studio/archive/refs/heads/main.zip), extract it, and double-click `scripts/install-codex-app.cmd`. This safely merges Fuse Studio into your existing personal marketplace without deleting other plugins (it backs up the JSON). Restart Codex, open **Plugins Directory**, select **Personal Plugins** (or your existing personal marketplace name), and click **Install** on Fuse Studio. Codex downloads the plugin from GitHub at installation time. This requires a Codex desktop version with local marketplace support. See [the app-only Codex guide](docs/codex.md#codex-desktop-app-without-cli).
 
 **Full native plugin**, including all 23 skills, Stud UI, curated references and a local, read-only knowledge MCP. In a terminal with the current Codex CLI:
 

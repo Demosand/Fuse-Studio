@@ -1,3 +1,9 @@
+# 2.3.1 — Codex desktop app no-CLI installer
+
+- Windows `.cmd` + PowerShell helper for personal GitHub marketplace registration without installing Codex CLI or Git.
+- Preserves existing personal plugin entries and backs up existing configuration before writing.
+- Codex desktop app installation documented separately from optional Codex CLI commands.
+
 # 2.3.0 — OpenAI Codex support
 
 - Portable Codex Agent Plugins manifest: `plugin.json`, `mcp.json`.

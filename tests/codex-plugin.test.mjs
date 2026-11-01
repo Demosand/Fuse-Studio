@@ -50,3 +50,14 @@ test('Codex offers all source skills and complete Stud kit',()=>{
  assert.ok(fs.existsSync(path.join(root,'vendor/stud-ui/src/StudUI.luau')));
  assert.ok(fs.existsSync(path.join(root,'docs/codex.md')));
 });
+test('Codex desktop no-CLI installer preserves personal marketplace plugins',()=>{
+ const script=fs.readFileSync(path.join(root,'scripts/install-codex-app.ps1'),'utf8');
+ const cmd=fs.readFileSync(path.join(root,'scripts/install-codex-app.cmd'),'utf8');
+ assert.match(script,/personal/i);
+ assert.match(script,/marketplace.json/);
+ assert.match(script,/backup-/);
+ assert.match(script,/Where-Object/);
+ assert.match(script,/Demosand\/Fuse-Studio/);
+ assert.ok(!script.includes('Remove-Item'));
+ assert.match(cmd,/install-codex-app.ps1/);
+});
