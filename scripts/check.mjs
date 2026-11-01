@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadKnowledge } from '../server/knowledge.mjs';
+import {visualReferenceOverview} from '../server/visual-references.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 function exists(p) { return fs.existsSync(path.join(root, p)); }
 function json(file) { return JSON.parse(fs.readFileSync(path.join(root, file), 'utf8')); }
@@ -11,6 +12,8 @@ const mcp = json('.mcp.json');
 const agPlugin=json('.antigravity-plugin/plugin.json');
 const agMcp=json('mcp_config.json');
 const errors = [];
+const visuals=visualReferenceOverview();
+if(visuals.count!==12186||visuals.types.image!==11968||visuals.types.video!==5||visuals.types.documentation!==213)errors.push('visual catalog incomplete');
 const codexPlugin = json('plugin.json');
 const codexLegacy = json('.codex-plugin/plugin.json');
 const codexMcp = json('mcp.json');
@@ -38,8 +41,10 @@ if (new Set(ids).size !== ids.length) errors.push('duplicate document ids');
 for (const id of ['knowledge/engineering/network-security','knowledge/gameplay/combat','knowledge/presentation/ui-design','knowledge/presentation/vfx','workflows/audit']) {
   if (!ids.includes(id)) errors.push('missing document: '+id);
 }
-for (const file of ['LICENSE','THIRD_PARTY_NOTICES.md','README.md','README.ru.md','docs/antigravity.md','docs/codex.md','docs/stud-asset-audit.md','data/stud-reported-ids.json','server/index.mjs','vendor/stud-ui/LICENSE','vendor/stud-ui/src/StudUI.luau','vendor/stud-ui/src/StudMotion.luau','vendor/stud-ui/src/CheckUIIcons.luau']) {
+for (const file of ['LICENSE','THIRD_PARTY_NOTICES.md','README.md','README.ru.md','catalog/roblox-ai/manifest.json','docs/visual-references.md','vendor/stud-ui/src/StudNativeIcons.luau','docs/antigravity.md','docs/codex.md','docs/stud-asset-audit.md','data/stud-reported-ids.json','server/index.mjs','vendor/stud-ui/LICENSE','vendor/stud-ui/src/StudUI.luau','vendor/stud-ui/src/StudMotion.luau','vendor/stud-ui/src/CheckUIIcons.luau']) {
   if (!exists(file)) errors.push('missing '+file);
 }
 if (errors.length) { console.error(errors.join('\n')); process.exitCode=1; }
-else console.log(`Fuse Studio check OK: ${docs.length} local references, ${skills.length} skills, 2 read-only MCP tools, 25 skills, asset guard and visual refs.`);
+else console.log(`Fuse Studio check OK: ${docs.length} local references, ${skills.length} skills, 4 read-only MCP tools, 25 skills, 12,186 indexed visual source paths and safe native icons.`);
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

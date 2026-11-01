@@ -31,7 +31,7 @@ test('stdio MCP initializes, lists tools, searches, reads and rejects traversal'
   const initialized=await send('initialize',{protocolVersion:'2025-06-18',capabilities:{},clientInfo:{name:'test',version:'1.0'}});
   assert.equal(initialized.result.serverInfo.name,'fuse-studio-knowledge');
   const list = await send('tools/list',{});
-  assert.deepEqual(list.result.tools.map(x=>x.name),['search_knowledge','read_knowledge']);
+  assert.deepEqual(list.result.tools.map(x=>x.name),['search_knowledge','read_knowledge','search_visual_references','list_visual_categories']);
   const result=await send('tools/call',{name:'search_knowledge',arguments:{query:'remote validation security'}});
   assert.match(result.result.content[0].text,/network-security/);
   assert.ok(result.result.content[0].text.length<=3200);
@@ -39,6 +39,15 @@ test('stdio MCP initializes, lists tools, searches, reads and rejects traversal'
   assert.match(read.result.content[0].text,/RemoteEvent/);
   const invalid=await send('tools/call',{name:'read_knowledge',arguments:{id:'../../etc/passwd'}});
   assert.equal(invalid.result.isError,true);
+  const visual = await send('tools/call',{name:'search_visual_references',arguments:{query:'stud shop',section:'stud',kind:'image',limit:4}});
+  const found = JSON.parse(visual.result.content[0].text);
+  assert.ok(found.results.some(x=>x.path.includes('style-refs/studs/mockup-shop.png')));
+  assert.ok(found.results.every(x=>x.url.startsWith('https://github.com/')));
+  const categories = await send('tools/call',{name:'list_visual_categories',arguments:{}});
+  const stats = JSON.parse(categories.result.content[0].text);
+  assert.equal(stats.count,12186);
+  const bad = await send('tools/call',{name:'search_visual_references',arguments:{query:'stud',section:'../other'}});
+  assert.equal(bad.result.isError,true);
   const notification={jsonrpc:'2.0',method:'notifications/initialized',params:{}};
   child.stdin.write(JSON.stringify(notification)+'\n');
   child.stdin.end();

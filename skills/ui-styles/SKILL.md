@@ -1,11 +1,12 @@
 ---
 name: ui-styles
-description: "Choose a Roblox GUI art direction: Stud, modern minimal, glass, sci-fi, retro, cartoon or fantasy."
+description: "Choose and persist Roblox GUI art direction. Explore the 25 styles and 11,968 image references from roblox-ai without reusing copyrighted assets."
 disable-model-invocation: true
 ---
-# Fuse Studio / GUI Style Selector
+# Fuse Studio / UI Style Selector
 
 Task: $ARGUMENTS
 
-Read knowledge/ui-expert/style-selector and style-presets. Inspect the user prompt, existing Roblox GUIs, reference screenshots and project docs/gui-style.md first. If style is unknown for a NEW screen, ask ONE short question offering Stud and alternative design families. If a design exists, DO NOT ask again; keep it across the project. Persist the decision if user project files are writable. For Stud, use original source in vendor/stud-ui and guidance in stud-ui-design. For bug fixes, do not ask about visual style.
-For richer art direction without copying copyrighted assets, read knowledge/visual-references/roblox-ai-guide and select at most a few visual references from the 25 styles. Keep visual links separate from Roblox image asset IDs.
+Inspect existing GUI, project `docs/gui-style.md` and supplied screenshots FIRST. If style is already established, preserve it without asking. For a NEW UI where style is unclear, ask developer ONCE: Stud, Premium Simulator, Modern Minimal, Glass/Aurora, Sci-Fi, Tactical, Pixel/Retro, Cartoon, Fantasy or custom/reference? Accept other styles. If developer explicitly delegates design, choose an appropriate style.
+
+Use `search_visual_references` with `section='style'` or `section='stud'` and `limit<=5` to browse the full local catalog. View at most 2–3 relevant images using available vision/browser tools before describing their appearance. For themes consult original mockups at `style-refs`; real-game screenshots and image links are inspiration, not freely redistributable assets. Persist selected design tokens and usage in project files when appropriate, then apply consistently to HUD, inventory, shop and menus. Stud uses original kit + Fuse safe native fallback wrappers; other styles use design principles rather than claiming a bundled kit.

@@ -1,0 +1,15 @@
+sfx/01-button-click/README.md
+sfx/01-button-click/sfx-fast-ui-1.jpg
+sfx/01-button-click/sfx-interface-buttons-1.png
+sfx/01-button-click/sfx-ui-clicks-1.png
+sfx/14-sword-swing-whoosh/README.md
+sfx/14-sword-swing-whoosh/sfx-forge-fantasy-1.png
+sfx/14-sword-swing-whoosh/sfx-forge-fantasy-2.png
+sfx/14-sword-swing-whoosh/sfx-sword-free-1.png
+sfx/15-sword-hit-metal/README.md
+sfx/15-sword-hit-metal/sfx-forge-fantasy-3.png
+sfx/15-sword-hit-metal/sfx-scifi-swords-1.png
+sfx/27-spell-cast-charge/README.md
+sfx/27-spell-cast-charge/sfx-combat-magic-1.jpg
+sfx/27-spell-cast-charge/sfx-combat-magic-3.jpg
+sfx/README.md

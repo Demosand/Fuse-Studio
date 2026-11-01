@@ -1,7 +1,7 @@
 {
   "name": "fuse-studio",
   "displayName": "Fuse Studio",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Unified Roblox Studio expert plugin: premium GUI, motion, VFX, strict Luau, networking, combat, security, data, workflows, local-first knowledge search.",
   "author": {
     "name": "Fuse Studio Contributors"
@@ -17,3 +17,5 @@
     "optimization"
   ]
 }
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

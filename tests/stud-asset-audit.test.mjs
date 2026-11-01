@@ -26,7 +26,7 @@ test('no copyrighted roblox-ai screenshots are vendored',()=>{
  assert.match(guide,/github\.com\/izzyfrm\/roblox-ai/);
 });
 test('both safe adapters are non-destructive additions to upstream',()=>{
- for(const name of ['StudAssetGuard','StudUISafe','StudIconsSafe'])assert.ok(fs.existsSync(path.join(root,'vendor/stud-ui/src/'+name+'.luau')));
+ for(const name of ['StudAssetGuard','StudUISafe','StudIconsSafe','StudNativeIcons'])assert.ok(fs.existsSync(path.join(root,'vendor/stud-ui/src/'+name+'.luau')));
  assert.ok(read('vendor/stud-ui/src/StudUISafe.luau').includes('UI.StudsOverlay'));
  assert.ok(read('vendor/stud-ui/src/StudUISafe.luau').includes('originalProductCard'));
  assert.ok(read('vendor/stud-ui/src/StudIconsSafe.luau').includes('Guard.Resolve'));
@@ -37,3 +37,16 @@ test('new visual and missing image references are retrievable',()=>{
  for(const id of ['knowledge/visual-references/roblox-ai-guide','knowledge/ui-expert/stud-asset-replacement'])assert.ok(ids.includes(id),id);
  assert.ok(searchKnowledge(entries,'inaccessible stud ui image texture ID',5).some(x=>x.id.includes('stud-asset-replacement')));
 });
+
+test('native icon fallbacks for basket, currency, gamepad and social are present and linked',()=>{
+ const guard=read('vendor/stud-ui/src/StudAssetGuard.luau');
+ const ui=read('vendor/stud-ui/src/StudUISafe.luau');
+ const icons=read('vendor/stud-ui/src/StudIconsSafe.luau');
+ const native=read('vendor/stud-ui/src/StudNativeIcons.luau');
+ for(const kind of ['basket','robux','gamepad','banana','social'])assert.ok(native.includes(kind));
+ assert.ok(guard.includes('function Guard.NativeToken'));
+ assert.ok(icons.includes('Guard.NativeToken'));
+ assert.ok(ui.includes('Native.Draw'));
+});
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

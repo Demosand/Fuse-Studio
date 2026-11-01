@@ -133,3 +133,15 @@ This index is for manual browsing; Claude should prefer local `search_knowledge`
 - knowledge/ui-expert/stud-asset-replacement: map of 19 user-reported missing Stud IDs, fallback ideas and Studio verification.
 - docs/stud-asset-audit.md: manual runtime verification and safe adapter instructions.
 - vendor/stud-ui/src/{StudUISafe,StudIconsSafe,StudAssetGuard}.luau: no-image safe wrappers (original MIT files unchanged).
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).
+
+
+## Fuse 2.5 — Complete visual reference metadata (12,186 upstream files)
+- `catalog/roblox-ai/manifest.json`: pinned upstream commit and category counts.
+- `catalog/roblox-ai/paths/*.txt`: 13 local indexes containing **all 11,968 image paths, 5 video paths and 213 Markdown paths** (filenames only).
+- `server/visual-references.mjs`: keyword/category/kind/pagination search, no image downloads.
+- MCP `search_visual_references`, `list_visual_categories`: 2 additional local read-only tools, on demand.
+- `docs/visual-references.md`: rights, workflow and local command examples.
+- `scripts/update-visual-catalog.mjs`: manual metadata refresh from GitHub tree.
+- `vendor/stud-ui/src/StudNativeIcons.luau`: native asset-ID-free GUI basket, currency, gamepad, social icons.

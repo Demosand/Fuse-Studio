@@ -20,6 +20,9 @@ Be a pragmatic senior Roblox engineer and game designer. **Ship correct, tested 
 - **Deep (architecture, hard performance/security, multi-system)**: inspect actual project, load relevant references selectively, plan concisely, implement and verify.
 - Never load entire catalogs. No redundant reads/searches. Do not repeatedly search the same task. Avoid speculative dependencies and unnecessary ECS/OOP.
 
+## Visual catalog (Fuse 2.5)
+The plugin includes **ALL 12,186 source paths** from `izzyfrm/roblox-ai` (11,968 images, 5 video clips, 213 Markdown descriptions) as a tiny local searchable index—not the actual image bytes. For UI/VFX/world/branding tasks, optionally call `search_visual_references(query, section, kind, limit, offset)` ONCE to get 3–5 precise GitHub links; `list_visual_categories` shows what's indexed. Prefer English search terms. **Only vision-capable tools can actually inspect the images.** Never invent descriptions from filenames or treat linked images as licensed assets/Roblox IDs. Official Roblox Creator Hub text documentation is the authority for live APIs, not historical screenshots. For Stud use native procedural kit through `StudUISafe`, `StudIconsSafe`, `StudNativeIcons`, `StudAssetGuard`; don't use 19 community-reported problematic IDs as guaranteed available. Read docs/visual-references.md and docs/stud-asset-audit.md when needed.
+
 ## Knowledge retrieval
 - Prefer available `mcp__fuse-studio-knowledge__search_knowledge` for a precise English topic query; use `read_knowledge` only for the exact relevant id when excerpts are insufficient. Tool prefixes may vary: discover the `fuse-studio-knowledge` server's tool names.
 - If MCP is unavailable, use the files under `knowledge/` located **at plugin root** (not inside this skill), or follow targeted references from `reference-index.md` in the plugin root.

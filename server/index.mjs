@@ -1,17 +1,20 @@
 #!/usr/bin/env node
 // Local-only MCP stdio server. No network, telemetry, subprocesses or third-party packages.
 import { loadKnowledge, searchKnowledge, splitText } from './knowledge.mjs';
+import {searchVisualReferences,visualReferenceOverview,VISUAL_SECTIONS} from './visual-references.mjs';
 const entries=loadKnowledge();
 const docs=new Map(entries.map(x=>[x.id,x]));
-const VERSION='2.4.0';
+const VERSION='2.5.0';
 const RESULT_LIMIT=3900;
 function result(body,isError=false) { return {content:[{type:'text',text:body}],...(isError?{isError:true}:{})}; }
 const TOOLS=[
  {name:'search_knowledge',description:'Local Roblox Studio/Luau reference retrieval (English or Russian). Search once for a nontrivial task; small, relevant excerpts. No network.',inputSchema:{type:'object',properties:{query:{type:'string',minLength:2,maxLength:500},area:{type:'string',enum:['all','ui','vfx','engineering','gameplay','operations','workflow'],default:'all'}},required:['query'],additionalProperties:false}},
- {name:'read_knowledge',description:'Read a specific local reference returned by search_knowledge, chunked by part (0-based). No network. Use only when needed.',inputSchema:{type:'object',properties:{id:{type:'string'},part:{type:'integer',minimum:0,maximum:100,default:0}},required:['id'],additionalProperties:false}}
+ {name:'read_knowledge',description:'Read a specific local reference returned by search_knowledge, chunked by part (0-based). No network. Use only when needed.',inputSchema:{type:'object',properties:{id:{type:'string'},part:{type:'integer',minimum:0,maximum:100,default:0}},required:['id'],additionalProperties:false}},
+ {name:'search_visual_references',description:'Search all 11,968 indexed image references, 5 clips and 213 documentation pages by filename and category. Returns only direct GitHub source links (visual inspiration, NOT Roblox asset IDs; rights may be restricted). Use a few relevant results, do not dump the whole catalog.',inputSchema:{type:'object',properties:{query:{type:'string',maxLength:300},section:{type:'string',enum:VISUAL_SECTIONS,default:'all'},kind:{type:'string',enum:['all','image','video','document'],default:'all'},limit:{type:'integer',minimum:1,maximum:12,default:6},offset:{type:'integer',minimum:0,maximum:13000,default:0}},additionalProperties:false}},
+ {name:'list_visual_categories',description:'Summarize 12,186 source paths from izzyfrm/roblox-ai: file counts by type, source, rights and categories (no downloads).',inputSchema:{type:'object',properties:{},additionalProperties:false}}
 ];
 function handle(method,params={}){
- if(method==='initialize')return {protocolVersion:params.protocolVersion||'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'fuse-studio-knowledge',version:VERSION},instructions:'Read-only, no telemetry. Search targeted Roblox issues and read relevant chunks only. Knowledge is guidance, not tested project code. Verify latest Roblox APIs and user project.'};
+ if(method==='initialize')return {protocolVersion:params.protocolVersion||'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'fuse-studio-knowledge',version:VERSION},instructions:'Read-only, no telemetry. Search small knowledge excerpts. Visual reference search returns local metadata and source links ONLY, not image contents or verified Roblox asset IDs. Inspect pictures before claiming visual properties and respect licenses. Verify current Roblox APIs and user project.'};
  if(method==='ping')return {};
  if(method==='tools/list')return {tools:TOOLS};
  if(method==='tools/call'){
@@ -34,6 +37,13 @@ function handle(method,params={}){
    if(part>=chunks.length)return result(`Out of range: document has ${chunks.length} part(s), indexed 0..${chunks.length-1}.`,true);
    return result(`${doc.id} [part ${part+1}/${chunks.length}]\n${chunks[part]}`);
   }
+  if(name==='search_visual_references'){
+    try{
+      const res=searchVisualReferences(a.query??'',{section:a.section??'all',kind:a.kind??'all',limit:a.limit??6,offset:a.offset??0});
+      return result(JSON.stringify(res,null,2).slice(0,RESULT_LIMIT));
+    }catch(e){return result(String(e?.message||'Invalid query'),true);}
+  }
+  if(name==='list_visual_categories')return result(JSON.stringify(visualReferenceOverview(),null,2).slice(0,RESULT_LIMIT));
   return result('Unknown tool',true);
  }
  return null;

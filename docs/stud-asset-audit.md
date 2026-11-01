@@ -41,3 +41,8 @@ Upload your own images or CC0 assets with verified permission through Roblox Stu
 The procedural stud fallback creates extra UI instances: profile on phones and reduce the number of generated studs for large grids. Its look is an approximation, not pixel-equivalent to the original texture.
 
 See detailed IDs and suggested replacements in knowledge/ui-expert/stud-asset-replacement.md.
+
+## 2.5 native icons (no uploaded assets required)
+Install `StudNativeIcons` as the seventh ModuleScript alongside the six original/adapter scripts. `StudUISafe` and `StudIconsSafe` now understand `fuse://basket`, `fuse://robux`, `fuse://gamepad`, `fuse://gamepad-dark`, `fuse://gamepad-light`, `fuse://banana` and `fuse://social` tokens internally. They NEVER pass these tokens to Roblox as image IDs. Native Frames, strokes and colored details draw the basket/gamepad/currency in the UI. Banana uses an emoji character; test whether the font renders it and replace with an authorized upload if not. Twitter bird is replaced with a neutral @ (not a counterfeit platform icon). Procedural studs and rarity gradients remain. Original 19 user-reported asset IDs are NOT assumed globally deleted, and wrapper rendering still needs verification in the user's place.
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

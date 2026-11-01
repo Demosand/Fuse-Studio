@@ -1,3 +1,12 @@
+# 2.5.0 — Complete roblox-ai reference index and procedural Stud icons
+
+- Indexed all 12,186 source paths (11,968 images, 5 clips, 213 Markdown descriptions) at pinned upstream commit. Linked paths only; no restricted media bytes copied.
+- Added local searchable visual reference catalog to Fuse MCP: search_visual_references and list_visual_categories. Supports keywords, Russian aliases, categories and pagination with small responses.
+- Added local CLI search/stats and opt-in metadata-only index update script.
+- Added original no-asset-ID native GUI graphics for Stud basket/shop, Robux-style token, gamepad and social indicator; emoji banana. Existing gradient/procedural fallbacks retained.
+- Expanded UI, Stud, styles, VFX and world skill routing to retrieve selective external references, require actual visual inspection and respect copyright.
+- Updated cross-client versions, README and test suite. Roblox Studio rendering/accessibility not yet playtested.
+
 # 2.4.0 — roblox-ai visual reference links and safe Stud asset handling
 
 - Added curated rights-aware links to izzyfrm/roblox-ai (25 art directions, Stud, GUI, VFX, icons); no copyrighted images copied.
@@ -51,3 +60,5 @@
 ## 1.0.0 — 2026-10-31
 
 - Initial unified Roblox engineering/creative skills, knowledge library, offline search, workflows and MIT notices.
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

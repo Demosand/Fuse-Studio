@@ -47,3 +47,8 @@ ContentProvider PreloadAsync status can fail for reasons other than deletion. Do
 Reference style galleries: https://github.com/izzyfrm/roblox-ai/tree/main/style-refs/studs ; https://github.com/izzyfrm/roblox-ai/tree/main/style-refs/simulator
 
 Official ContentProvider: https://create.roblox.com/docs/reference/engine/classes/ContentProvider
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).
+
+## Fuse 2.5: native icon implementations
+`StudNativeIcons.luau` draws basket, Robux-style coin, gamepad, neutral social symbol and emoji banana. `StudIconsSafe.Get()` returns internal `fuse://...` markers for the 7 reported icon IDs; `StudUISafe.Image()` converts markers to GUI graphics, not to Roblox `ImageLabel.Image` asset IDs. If a real accessible uploaded asset is desired, supply it explicitly after checking rights/availability in the target place. Source MIT modules stay unchanged. Stud texture, pink header and all 8 rarity panels already use procedural/native gradients.

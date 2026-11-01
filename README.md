@@ -1,4 +1,4 @@
-# Fuse Studio v2.4 — Roblox Studio toolkit for Claude Code, Google Antigravity & OpenAI Codex
+# Fuse Studio v2.5 — Roblox Studio toolkit for Claude Code, Google Antigravity & OpenAI Codex
 
 **One local-first plugin for premium GUI, VFX, Lua(u) engineering, game design, secure multiplayer and Roblox Studio workflows.**
 
@@ -8,7 +8,7 @@
 
 **Codex desktop app only (NO CLI / NO Git required):** Download the repository ZIP from [GitHub](https://github.com/Demosand/Fuse-Studio/archive/refs/heads/main.zip), extract it, and double-click `scripts/install-codex-app.cmd`. This safely merges Fuse Studio into your existing personal marketplace without deleting other plugins (it backs up the JSON). Restart Codex, open **Plugins Directory**, select **Personal Plugins** (or your existing personal marketplace name), and click **Install** on Fuse Studio. Codex downloads the plugin from GitHub at installation time. This requires a Codex desktop version with local marketplace support. See [the app-only Codex guide](docs/codex.md#codex-desktop-app-without-cli).
 
-**Full native plugin**, including all 25 skills, Stud UI, curated references and a local, read-only knowledge MCP. In a terminal with the current Codex CLI:
+**Full native plugin**, including all 25 skills, Stud UI, curated references and a local, read-only knowledge/visual MCP. In a terminal with the current Codex CLI:
 
 ```powershell
 codex plugin marketplace add Demosand/Fuse-Studio
@@ -156,3 +156,11 @@ The external [izzyfrm/roblox-ai](https://github.com/izzyfrm/roblox-ai) project i
 **19 community-reported broken Stud assets:** source mapping and no-image replacement strategies are provided in [the audit guide](docs/stud-asset-audit.md). We have not independently verified whether Roblox deleted these IDs; failure can mean permissions. New optional modules in `vendor/stud-ui/src/` are `StudAssetGuard.luau`, `StudUISafe.luau` and `StudIconsSafe.luau`. Together with the original Stud modules, they can replace suspect stud textures with native GUI details, shop headers with gradients, rarity panels with gradients and missing Robux coin with text. Some unavailable icons still need your approved uploads. Upstream MIT files remain unchanged.
 
 New skills: **`/fuse-studio:visual-refs`** (find images by style, link-only) and **`/fuse-studio:asset-audit`** (trace IDs, plan Studio verification and fallbacks). Use `npm run asset-audit` for a static source report; live checks require Roblox Studio and `ContentProvider:PreloadAsync`.
+
+## 2.5: complete indexed roblox-ai references + native Stud replacement graphics
+
+**All 12,186 source paths indexed locally:** 11,968 image refs, 5 video refs, 213 Markdown descriptions. The index stores filenames and **immutable GitHub source URLs**, NOT original images/video/document bodies (which have mixed ownership and licenses). See [visual reference search](docs/visual-references.md) and `catalog/roblox-ai/`. Our MCP offers `search_visual_references` and `list_visual_categories` in addition to `search_knowledge` and `read_knowledge`; these are local read-only tools. For fast use: `npm run refs:search -- stud shop --section=stud` and `npm run refs:stats`. For optional metadata refresh: `npm run refs:update` (manual and network-based, never auto-downloads media).
+
+**Stud safe icons improved:** `vendor/stud-ui/src/StudNativeIcons.luau` draws an original native Roblox shop basket, Robux-style currency token, gamepad and neutral social indicator; banana has an emoji fallback (may need a user-provided icon). These complement the safe stud pattern, native shop header and rarity gradients. Use `StudUI`, `StudMotion`, `CheckUIIcons`, `StudUISafe`, `StudIconsSafe`, `StudAssetGuard`, `StudNativeIcons` ModuleScripts together and require the **Safe** entrypoints. Original MIT files remain unchanged. The 19 IDs are community-reported inaccessible, not confirmed globally deleted; in-Studio asset and rendering tests are still needed.
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

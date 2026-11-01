@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "fuse-studio",
-  "version": "2.4.0",
-  "description": "Roblox development super toolkit with curated visual references and safe Stud UI asset fallbacks",
+  "version": "2.5.0",
+  "description": "Roblox engineering with 25 skills, Stud UI native icon fallbacks and 12,186 indexed visual references",
   "author": {
     "name": "Fuse Studio Contributors",
     "url": "https://github.com/Demosand/Fuse-Studio"
@@ -41,3 +41,5 @@
     }
   }
 }
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

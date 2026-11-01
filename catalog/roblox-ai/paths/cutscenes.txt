@@ -1,0 +1,8 @@
+cutscenes/05-over-the-shoulder-dialogue/README.md
+cutscenes/05-over-the-shoulder-dialogue/vn-dialogue-gui-1.png
+cutscenes/10-impact-hit-stop/README.md
+cutscenes/10-impact-hit-stop/action-fx-vn-2.png
+cutscenes/17-visual-novel-dialogue-scene/README.md
+cutscenes/17-visual-novel-dialogue-scene/vn-dialogue-boxes-1.jpeg
+cutscenes/17-visual-novel-dialogue-scene/vn-dialogue-gui-1.png
+cutscenes/README.md

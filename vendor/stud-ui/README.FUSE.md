@@ -7,3 +7,8 @@ This folder includes original Luau kit source code, reference docs and examples 
 For Fuse Studio use /fuse-studio:stud-ui. This folder is source/reference material, NOT an additional enabled Claude skill, so users choose Stud explicitly or through one-time style selection.
 ## Fuse Studio safe adapters
 StudAssetGuard.luau, StudUISafe.luau, and StudIconsSafe.luau are Fuse-authored additions. They avoid 19 user-reported unavailable IDs without altering original source modules. Use with original StudUI/CheckUIIcons/StudMotion. See docs/stud-asset-audit.md. All originals remain covered by their upstream copyright; no screenshot gallery was redistributed.
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).
+
+## Fuse 2.5
+StudNativeIcons.luau is a Fuse-authored procedural alternative to user-reported unavailable ShopBasket, Robux coin, and CheckUIIcons gamepad/social IDs. It is loaded automatically by the Safe modules, not the original MIT kits. Emoji banana may require a custom authorized icon on some platforms. All external roblox-ai reference images remain source-linked only.

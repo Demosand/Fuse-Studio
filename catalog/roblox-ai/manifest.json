@@ -1,0 +1,29 @@
+{
+  "source": "izzyfrm/roblox-ai",
+  "source_commit": "e45dd095f4c58350f4826f529fd79b8fac435ece",
+  "date": "2026-11-01",
+  "source_url": "https://github.com/izzyfrm/roblox-ai",
+  "indexed_paths": 12186,
+  "counts": {
+    "image": 11968,
+    "video": 5,
+    "documentation": 213,
+    "other": 0
+  },
+  "categories": [
+    "game-refs",
+    "roblox-docs",
+    "previews",
+    "visual-refs",
+    "style-refs",
+    "ui-styles",
+    "animations",
+    "cutscenes",
+    "sfx",
+    "vfx",
+    "logos",
+    "thumbnails",
+    "root"
+  ],
+  "policy": "Paths and deep links only. No media copied. Upstream images have mixed intellectual-property rights; use as visual references only unless authorized."
+}

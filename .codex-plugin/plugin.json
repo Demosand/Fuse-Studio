@@ -1,6 +1,6 @@
 {
   "name": "fuse-studio",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "Roblox Studio engineering skills: Luau architecture, safe multiplayer, polished UI and Stud UI, VFX, optimization, audits, and a local read-only knowledge server.",
   "author": {
     "name": "Fuse Studio Contributors",
@@ -38,3 +38,5 @@
     ]
   }
 }
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).

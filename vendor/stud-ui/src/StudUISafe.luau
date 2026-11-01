@@ -3,11 +3,15 @@
 -- Replaces community-reported missing decorative IDs with Roblox-native GUI.
 local UI = require(script.Parent.StudUI)
 local Guard = require(script.Parent.StudAssetGuard)
+local Native = require(script.Parent.StudNativeIcons)
 
 -- The original CheckUIIcons has a separate read-only wrapper: StudIconsSafe.
 -- Do NOT mistake the 19 reported IDs for a complete audit of 1022 icons.
 for name, id in pairs(UI.Assets) do
-  if Guard.IsReported(id) then UI.Assets[name] = "" end
+  if Guard.IsReported(id) then
+    local kind=Guard.NativeToken(id)
+    UI.Assets[name]=if kind then "fuse://" .. kind else ""
+  end
 end
 for _, rarity in pairs(UI.Rarities) do
   if Guard.IsReported(rarity.panel) then rarity.panel = "" end
@@ -53,25 +57,24 @@ end
 local originalImage = UI.Image
 function UI.Image(parent, assetId, p)
   p = p or {}
-  local flagged = Guard.IsReported(assetId)
+  local kind = Guard.NativeToken(assetId)
   local actual = Guard.Resolve(assetId)
   local image = originalImage(parent, actual, p)
-  -- Only decorate *known missing* IDs and Robux badges with placeholders.
-  local label = if p.Name == "Piece" and actual == "" then "R$" else
-    if flagged then "?" else nil
-  if label then
-    local text = Instance.new("TextLabel")
-    text.Name = "FuseAssetFallback"
-    text.Size = UDim2.fromScale(1, 1)
-    text.BackgroundTransparency = 1
-    text.Text = label
-    text.Font = Enum.Font.GothamBold
-    text.TextScaled = true
-    text.TextColor3 = Color3.fromRGB(255, 255, 255)
-    text.TextStrokeColor3 = Color3.fromRGB(38, 18, 65)
-    text.TextStrokeTransparency = 0.15
-    text.ZIndex = image.ZIndex + 1
-    text.Parent = image
+  if kind then
+    Native.Draw(image,kind)
+  elseif Guard.IsReported(assetId) or (p.Name=="Piece" and actual=="") then
+    local text=Instance.new("TextLabel")
+    text.Name="FuseAssetFallback"
+    text.Size=UDim2.fromScale(1,1)
+    text.BackgroundTransparency=1
+    text.Text=if p.Name=="Piece" then "R$" else "•"
+    text.Font=Enum.Font.GothamBold
+    text.TextScaled=true
+    text.TextColor3=Color3.new(1,1,1)
+    text.TextStrokeColor3=Color3.fromRGB(36,24,64)
+    text.TextStrokeTransparency=0.15
+    text.ZIndex=image.ZIndex+1
+    text.Parent=image
   end
   return image
 end
@@ -86,7 +89,10 @@ function UI.Window(gui, p)
     opts.HeaderImage = nil
     opts.Header = "pink"
   end
-  if Guard.IsReported(opts.Icon) then opts.Icon = "" end
+  if Guard.IsReported(opts.Icon) then
+    local kind=Guard.NativeToken(opts.Icon)
+    opts.Icon=if kind then "fuse://" .. kind else ""
+  end
   local window = originalWindow(gui, opts)
   return window
 end

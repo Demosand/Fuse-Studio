@@ -40,8 +40,28 @@ function Guard.Reason(assetId: unknown): string?
   return REPORTED[numeric(assetId)]
 end
 
+-- Native replacements for community-reported IDs; no new Roblox asset IDs needed.
+local NATIVE: {[string]: string} = {
+ ["128758985973789"]="banana",
+ ["80257872092187"]="gamepad",
+ ["117542131956071"]="gamepad",
+ ["78959709568458"]="gamepad",
+ ["117065333515921"]="gamepad-dark",
+ ["79504731314029"]="gamepad-light",
+ ["121258694194678"]="social",
+ ["120530633952826"]="basket",
+ ["83084350609799"]="robux",
+}
+function Guard.NativeToken(assetId: unknown): string?
+ if type(assetId)=="string" and string.sub(assetId,1,7)=="fuse://" then
+  return string.sub(assetId,8)
+ end
+ return NATIVE[numeric(assetId)]
+end
+
 -- Does not assume a visually similar Roblox asset is actually available.
 function Guard.Resolve(assetId: unknown, approvedAlternative: string?): string
+  if type(assetId)=="string" and string.sub(assetId,1,7)=="fuse://" then return "" end
   if not Guard.IsReported(assetId) then
     if type(assetId) == "string" then return assetId end
     return ""

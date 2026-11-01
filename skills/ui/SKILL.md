@@ -14,7 +14,10 @@ For a new interface without a chosen style or reference, ask the developer **one
 ## 1. Discover and design
 Inspect existing GUI hierarchy, style assets, gameplay theme, screenshots, input modes. Choose explicit visual language and define typography, semantic color tokens, corner/stroke/spacing scale, states and visual hierarchy. Never invent uploaded asset IDs. For brand-new screens, produce a small art-direction plan internally and proceed; ask only on blocking ambiguity.
 
-## 2. Load relevant knowledge, not the entire library
+## 2. Visual reference retrieval, when it helps
+If exact appearance matters, use local MCP `search_visual_references` (or `npm run refs:search`) with a relevant section `ui`, `stud` or `style`, query English keywords and request 3–5 links. **The tool returns metadata, not viewed images**: inspect selected links through a vision-capable tool before describing precise color/layout, and don't inject thousands of files. See docs/visual-references.md. Screenshots and image assets have mixed rights and cannot be pasted as `rbxassetid`. For Stud, require the bundled safe wrapper `StudUISafe` plus `StudIconsSafe`, `StudAssetGuard`, `StudNativeIcons`, never use original suspect IDs as confirmed available.
+
+## 3. Load relevant knowledge, not the entire library
 Search once with English query and area `ui`. Prioritize `knowledge/ui-expert/visual-direction`, `tokens-theme-system`, `responsive-layout-engine`, `motion-orchestration` and task-specific documents (inventory, shop, HUD, toast, gamepad, viewport). Read only relevant chunks.
 
 ## 3. Implementation standards

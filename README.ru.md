@@ -1,4 +1,4 @@
-# Fuse Studio 2.4 — Roblox-скиллы для Codex, Claude Code и Google Antigravity
+# Fuse Studio 2.5 — Roblox-скиллы для Codex, Claude Code и Google Antigravity
 
 **25 скилл-команд, 87 справочников, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
 
@@ -115,3 +115,15 @@ New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins" | Out-Null; g
 Новые команды: `/fuse-studio:visual-refs` для визуальных референсов и `/fuse-studio:asset-audit` для поиска проблем с картинками. В Antigravity эти же скиллы называются `/visual-refs` и `/asset-audit`.
 
 Статический аудит: `npm run asset-audit`. Проверка реальной загрузки требует Roblox Studio.
+
+## Fuse Studio 2.5 — полный каталог roblox-ai и картинки Stud UI
+
+Включён **поисковый каталог всех 12 186 исходных файлов** из roblox-ai: **11 968 изображений, 5 видео и 213 Markdown-описаний**. В нашем репозитории хранятся **имена и ссылки**, не чужие изображения и не полные тексты: права на многие медиа принадлежат авторам. Для визуального анализа ИИ должен реально открыть выбранные картинки, а не угадывать внешний вид по названиям. Для актуальных Roblox API нужно обращаться к официальному Creator Hub, а не к старым скриншотам документации.
+
+Добавлены два локальных MCP-инструмента: `search_visual_references` и `list_visual_categories`. Существующие `search_knowledge`, `read_knowledge` сохранены. Поиск доступен по направлениям Stud, UI, VFX, анимации, иконки, стили, игры и документация. Все 12 тысяч ссылок НЕ загружаются в контекст; по запросу выдаются 3–5 релевантных ссылок. Подробности: [docs/visual-references.md](docs/visual-references.md).
+
+**Stud UI:** добавлен собственный `StudNativeIcons.luau` — нарисованные встроенными Roblox GUI-элементами корзина магазина, игровая валюта, геймпад и нейтральная социальная иконка; банан — emoji-вариант с возможностью замены собственным изображением. Также работают уже созданные замены Stud-текстуры, шапки магазина и восьми панелей редкости. Для установки новых интерфейсов нужны семь ModuleScripts: StudUI, StudMotion, CheckUIIcons, StudAssetGuard, StudUISafe, StudIconsSafe, StudNativeIcons. Это **не новые проверенные Asset ID**: все функции без сторонней картинки. Оригинальные MIT-модули сохранены.
+
+Быстрый поиск без MCP: `npm run refs:search -- stud shop --section=stud`. Обновление каталога при желании: `npm run refs:update`. **Live-тест в Roblox Studio пока не проведён.**
+
+For Stud UI examples that formerly depended on failing image IDs, the Fuse native icon fallback module is now `StudNativeIcons.luau`. It draws basket, gamepad, currency and neutral social elements with built-in Roblox GUI. Use `StudUISafe` + `StudIconsSafe` rather than the original module entrypoints when creating new GUI. See [the asset audit guide](stud-asset-audit.md).
