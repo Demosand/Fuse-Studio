@@ -62,3 +62,7 @@ SOFTWARE.
 ## Stud UI Clean Roblox (bundled)
 
 Original source and documentation under `vendor/stud-ui/` are from [TemporaryLooker22/Stud-UI-Clean-Roblox](https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox), Copyright (c) 2026 TemporaryLooker22, MIT license. Retain `vendor/stud-ui/LICENSE` and `vendor/stud-ui/THIRD_PARTY_NOTICES.md`. The `CheckUIIcons` registry comes from Check-UI Clean Roblox (MIT notice is in upstream THIRD_PARTY_NOTICES); hosted icons and assets remain subject to Roblox terms.
+
+
+## izzyfrm/roblox-ai — links only (no media redistributed)
+Fuse Studio links to https://github.com/izzyfrm/roblox-ai for visual inspiration. Its image library has mixed ownership and no repository-wide license; no copies of its media are bundled in Fuse. Roblox game screenshots belong to creators. Original documentation images are noted by upstream as Roblox Creator Docs CC BY 4.0, and original Kenney asset contact sheets are upstream CC0. Check rights for each asset before game reuse.

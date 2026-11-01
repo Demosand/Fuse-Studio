@@ -126,3 +126,10 @@ This index is for manual browsing; Claude should prefer local `search_knowledge`
 - `knowledge/ui-expert/style-presets` (Stud, Minimal, Glass, Sci-Fi, Tactical, Pixel, Cartoon, Fantasy)
 - `knowledge/ui-expert/stud-ui-design` (real vendored Stud UI kit)
 - `vendor/stud-ui` (original MIT Luau and documented examples; read only when Stud chosen)
+
+
+## Fuse 2.4 visual references and asset safety
+- knowledge/visual-references/roblox-ai-guide: curated linked gallery, 25 styles, UI/Stud reference material, rights-aware.
+- knowledge/ui-expert/stud-asset-replacement: map of 19 user-reported missing Stud IDs, fallback ideas and Studio verification.
+- docs/stud-asset-audit.md: manual runtime verification and safe adapter instructions.
+- vendor/stud-ui/src/{StudUISafe,StudIconsSafe,StudAssetGuard}.luau: no-image safe wrappers (original MIT files unchanged).

@@ -3,7 +3,7 @@
 import { loadKnowledge, searchKnowledge, splitText } from './knowledge.mjs';
 const entries=loadKnowledge();
 const docs=new Map(entries.map(x=>[x.id,x]));
-const VERSION='2.3.1';
+const VERSION='2.4.0';
 const RESULT_LIMIT=3900;
 function result(body,isError=false) { return {content:[{type:'text',text:body}],...(isError?{isError:true}:{})}; }
 const TOOLS=[

@@ -1,6 +1,6 @@
-# Fuse Studio 2.3.1 — Roblox-скиллы для Codex, Claude Code и Google Antigravity
+# Fuse Studio 2.4 — Roblox-скиллы для Codex, Claude Code и Google Antigravity
 
-**23 скилл-команды, 85 справочников, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
+**25 скилл-команд, 87 справочников, 6 сценариев, 3 экспертных агента, 5 примеров Luau.** Один плагин для программирования, красивого GUI и эффектов, сетевого кода, безопасности, DataStore, NPC и выпуска игр.
 
 Fuse Studio создан с учётом сильных сторон [ro-engineer](https://github.com/excaldev/ro-engineer) и [roblox-brain](https://github.com/AkitoDevs/roblox-brain), но это самостоятельная переработка и дополнение; **не буквальное объединение 100% файлов двух исходников**. Оригинальные MIT-уведомления: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
@@ -13,7 +13,7 @@ Fuse Studio создан с учётом сильных сторон [ro-enginee
 Он не требует Git или Codex CLI. Для работы локального MCP-поиска понадобится Node.js 18+. Подробности: [docs/codex.md](docs/codex.md).
 
 
-Fuse Studio 2.3 поддерживает **Codex CLI и совместимые приложения Codex** как полноценный плагин: 23 скилла, Stud UI, вся локальная база знаний и MCP.
+Fuse Studio 2.3 поддерживает **Codex CLI и совместимые приложения Codex** как полноценный плагин: 25 скиллов, Stud UI, вся локальная база знаний и MCP.
 
 **Если установлен Codex CLI**, можно использовать команды:
 
@@ -29,7 +29,7 @@ codex plugin list
 
 ## Установка в Google Antigravity
 
-**Теперь Fuse Studio — нативный плагин Antigravity:** 23 скилла, 3 агента и локальный MCP-поиск знаний.
+**Теперь Fuse Studio — нативный плагин Antigravity:** 25 скиллов, 3 агента и локальный MCP-поиск знаний.
 
 **Если установлен Antigravity CLI (`agy`):**
 
@@ -105,3 +105,13 @@ New-Item -ItemType Directory -Force "$HOME\.gemini\config\plugins" | Out-Null; g
 Включён полноценный MIT-код [Stud UI Clean Roblox](https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox): StudUI, StudMotion, CheckUIIcons (1022 иконки), справочники и 6 примеров. См. `vendor/stud-ui` и `docs/stud-ui-integration.md`.
 
 **Официальный репозиторий:** [Demosand/Fuse-Studio](https://github.com/Demosand/Fuse-Studio). Для установки используй `/plugin marketplace add Demosand/Fuse-Studio`, затем `/plugin install fuse-studio@fuse-studio`.
+
+## Fuse Studio 2.4 — roblox-ai и исправление Stud UI
+
+[izzyfrm/roblox-ai](https://github.com/izzyfrm/roblox-ai) содержит **11 968 визуальных референсов** и 5 видео. Это не сборник Luau-скриптов, поэтому вместо копирования тысяч картинок мы добавили поисковые ссылки на Stud-макеты, 25 семейств дизайна, иконки, VFX, анимации и примеры игровых интерфейсов. Права на изображения смешанные, разрешение на их повторную публикацию отсутствует. `knowledge/visual-references/roblox-ai-guide.md` — каталог ссылок.
+
+В Stud UI найдены **все 19 указанных ID**: 7 иконок, 4 текстуры и 8 панелей редкости. Нельзя пока утверждать, что каждый ID удалён Roblox: это могут быть ограничения доступа. Добавлены безопасные модули `StudAssetGuard`, `StudUISafe`, `StudIconsSafe` и [подробный аудит](docs/stud-asset-audit.md). Они используют встроенные GUI-градиенты, студы и текстовые обозначения там, где изображения недоступны; отдельные иконки потребуют собственных загруженных файлов. Оригинальные MIT-модули не изменены.
+
+Новые команды: `/fuse-studio:visual-refs` для визуальных референсов и `/fuse-studio:asset-audit` для поиска проблем с картинками. В Antigravity эти же скиллы называются `/visual-refs` и `/asset-audit`.
+
+Статический аудит: `npm run asset-audit`. Проверка реальной загрузки требует Roblox Studio.

@@ -25,7 +25,7 @@ if (marketplace.name !== 'fuse-studio') errors.push('marketplace name mismatch')
 if (!marketplace.plugins?.some(p => p.name === plugin.name && p.source === './')) errors.push('marketplace source invalid');
 if (!mcp.mcpServers?.['fuse-studio-knowledge']) errors.push('missing MCP config');
 const skills = fs.readdirSync(path.join(root,'skills'),{withFileTypes:true}).filter(x=>x.isDirectory()).map(x=>x.name);
-if(skills.length<23)errors.push('expected >=20 skills');
+if(skills.length<25)errors.push('expected >=25 skills');
 for (const skill of skills) {
   const file = `skills/${skill}/SKILL.md`;
   if (!exists(file)) errors.push(`missing ${file}`);
@@ -38,8 +38,8 @@ if (new Set(ids).size !== ids.length) errors.push('duplicate document ids');
 for (const id of ['knowledge/engineering/network-security','knowledge/gameplay/combat','knowledge/presentation/ui-design','knowledge/presentation/vfx','workflows/audit']) {
   if (!ids.includes(id)) errors.push('missing document: '+id);
 }
-for (const file of ['LICENSE','THIRD_PARTY_NOTICES.md','README.md','README.ru.md','docs/antigravity.md','docs/codex.md','server/index.mjs','vendor/stud-ui/LICENSE','vendor/stud-ui/src/StudUI.luau','vendor/stud-ui/src/StudMotion.luau','vendor/stud-ui/src/CheckUIIcons.luau']) {
+for (const file of ['LICENSE','THIRD_PARTY_NOTICES.md','README.md','README.ru.md','docs/antigravity.md','docs/codex.md','docs/stud-asset-audit.md','data/stud-reported-ids.json','server/index.mjs','vendor/stud-ui/LICENSE','vendor/stud-ui/src/StudUI.luau','vendor/stud-ui/src/StudMotion.luau','vendor/stud-ui/src/CheckUIIcons.luau']) {
   if (!exists(file)) errors.push('missing '+file);
 }
 if (errors.length) { console.error(errors.join('\n')); process.exitCode=1; }
-else console.log(`Fuse Studio check OK: ${docs.length} local references, ${skills.length} skills, 2 read-only MCP tools, Claude Code + Antigravity + Codex.`);
+else console.log(`Fuse Studio check OK: ${docs.length} local references, ${skills.length} skills, 2 read-only MCP tools, 25 skills, asset guard and visual refs.`);

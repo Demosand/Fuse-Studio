@@ -1,4 +1,4 @@
-# Fuse Studio v2.3.1 — Roblox Studio toolkit for Claude Code, Google Antigravity & OpenAI Codex
+# Fuse Studio v2.4 — Roblox Studio toolkit for Claude Code, Google Antigravity & OpenAI Codex
 
 **One local-first plugin for premium GUI, VFX, Lua(u) engineering, game design, secure multiplayer and Roblox Studio workflows.**
 
@@ -8,7 +8,7 @@
 
 **Codex desktop app only (NO CLI / NO Git required):** Download the repository ZIP from [GitHub](https://github.com/Demosand/Fuse-Studio/archive/refs/heads/main.zip), extract it, and double-click `scripts/install-codex-app.cmd`. This safely merges Fuse Studio into your existing personal marketplace without deleting other plugins (it backs up the JSON). Restart Codex, open **Plugins Directory**, select **Personal Plugins** (or your existing personal marketplace name), and click **Install** on Fuse Studio. Codex downloads the plugin from GitHub at installation time. This requires a Codex desktop version with local marketplace support. See [the app-only Codex guide](docs/codex.md#codex-desktop-app-without-cli).
 
-**Full native plugin**, including all 23 skills, Stud UI, curated references and a local, read-only knowledge MCP. In a terminal with the current Codex CLI:
+**Full native plugin**, including all 25 skills, Stud UI, curated references and a local, read-only knowledge MCP. In a terminal with the current Codex CLI:
 
 ```powershell
 codex plugin marketplace add Demosand/Fuse-Studio
@@ -22,7 +22,7 @@ The package uses portable `plugin.json` + `mcp.json`, plus a compatibility fallb
 
 ## Google Antigravity installation (2.2)
 
-**Native plugin support:** installs all 23 skills, 3 expert agents and the local read-only knowledge MCP using Antigravity's own plugin system. No conversion or manual copying of individual skills.
+**Native plugin support:** installs all 25 skills, 3 expert agents and the local read-only knowledge MCP using Antigravity's own plugin system. No conversion or manual copying of individual skills.
 
 **Antigravity CLI (single command):**
 
@@ -70,8 +70,8 @@ claude plugin update fuse-studio@fuse-studio
 
 ## What is included
 
-- **23 named skills/commands** (one default router; 22 explicitly invoked specialists).
-- **85 curated articles + 6 workflows** = **91 searchable references** (see [index](reference-index.md)).
+- **25 named skills/commands** (one default router; 24 explicitly invoked specialists).
+- **87 curated articles + 6 workflows** = **93 searchable references** (see [index](reference-index.md)).
 - **3 optional expert agents**: UI critic, network security reviewer, performance profiler.
 - **8 templates** and **5 Luau examples** (note: examples require integration/Studio testing).
 - **Local MCP** `search_knowledge` and `read_knowledge` (English/Russian, topical filtering, chunked reads), no HTTP or telemetry.
@@ -148,3 +148,11 @@ For a new GUI with no style or reference, Fuse Studio asks the developer **once*
 Included **real MIT Stud UI Clean Roblox** source by TemporaryLooker22 in `vendor/stud-ui`: StudUI, StudMotion, 1022 icon registry, exact tokens, layouts, 6 builder/controller examples and licenses. Screenshot gallery remains upstream at https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox. See [Stud integration](docs/stud-ui-integration.md).
 
 **Official repository:** [Demosand/Fuse-Studio](https://github.com/Demosand/Fuse-Studio). Install with `/plugin marketplace add Demosand/Fuse-Studio` followed by `/plugin install fuse-studio@fuse-studio`.
+
+## Fuse Studio 2.4 — roblox-ai references and safer Stud UI assets
+
+The external [izzyfrm/roblox-ai](https://github.com/izzyfrm/roblox-ai) project is **a visual inspiration library, not a coding skill**: it reports 11,968 images and 5 videos, without a general repo-wide media license. Fuse Studio now links to its original Stud UI mockups, 25 style families, icon examples, Kenney CC0 contact sheets, screenshots, animation and VFX galleries through [curated reference guidance](knowledge/visual-references/roblox-ai-guide.md). The images are **NOT copied into Fuse** and do not supply usable Roblox asset IDs. Reuse of copyrighted art is never implied.
+
+**19 community-reported broken Stud assets:** source mapping and no-image replacement strategies are provided in [the audit guide](docs/stud-asset-audit.md). We have not independently verified whether Roblox deleted these IDs; failure can mean permissions. New optional modules in `vendor/stud-ui/src/` are `StudAssetGuard.luau`, `StudUISafe.luau` and `StudIconsSafe.luau`. Together with the original Stud modules, they can replace suspect stud textures with native GUI details, shop headers with gradients, rarity panels with gradients and missing Robux coin with text. Some unavailable icons still need your approved uploads. Upstream MIT files remain unchanged.
+
+New skills: **`/fuse-studio:visual-refs`** (find images by style, link-only) and **`/fuse-studio:asset-audit`** (trace IDs, plan Studio verification and fallbacks). Use `npm run asset-audit` for a static source report; live checks require Roblox Studio and `ContentProvider:PreloadAsync`.

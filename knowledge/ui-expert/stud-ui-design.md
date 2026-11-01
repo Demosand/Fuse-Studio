@@ -35,3 +35,5 @@ Implementation:
 7. Compare Studio screenshots to upstream gallery when Studio screenshot MCP exists; otherwise say visual match is unverified. Preserve upstream license and icon notices.
 
 Source: https://github.com/TemporaryLooker22/Stud-UI-Clean-Roblox
+## Community-reported unavailable images (Fuse 2.4)
+The original Stud UI kit includes 19 specific IDs reported unavailable in one user environment (7 icons, 4 UI textures, 8 rarity panels). These may be permissions/availability failures, NOT proven deleted. For new projects install original StudUI, StudMotion, CheckUIIcons together with StudAssetGuard, StudUISafe and StudIconsSafe and require the safe wrappers in builders. The wrappers use native GUI studs, header/rarity gradients and fallback Robux text without inventing asset IDs. Source kit is retained byte-for-byte; see knowledge/ui-expert/stud-asset-replacement, docs/stud-asset-audit and optional runtime PreloadAsync audit. Links to visual Stud mockups in izzyfrm/roblox-ai are reference only.

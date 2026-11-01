@@ -42,7 +42,7 @@ test('Codex portable and compatibility MCP start locally from plugin root',()=>{
 
 test('Codex offers all source skills and complete Stud kit',()=>{
  const skills=fs.readdirSync(path.join(root,'skills'),{withFileTypes:true}).filter(x=>x.isDirectory());
- assert.equal(skills.length,23);
+ assert.equal(skills.length,25);
  for(const x of skills){
   const raw=fs.readFileSync(path.join(root,'skills',x.name,'SKILL.md'),'utf8');
   assert.match(raw,/^---\r?\nname:/);

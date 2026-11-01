@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url';
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE_DIRS = ['knowledge', 'workflows'];
 const AREA_HINTS = {
-  ui: ['ui-expert', 'presentation/ui', 'accessibility'],
-  vfx: ['vfx-expert', 'presentation/vfx', 'presentation/audio', 'presentation/camera', 'presentation/animation', 'presentation/lighting'],
+  ui: ['ui-expert', 'visual-references', 'presentation/ui', 'accessibility'],
+  vfx: ['vfx-expert', 'visual-references', 'presentation/vfx', 'presentation/audio', 'presentation/camera', 'presentation/animation', 'presentation/lighting'],
   engineering: ['engineering', 'tools/studio', 'tools/benchmark'],
   gameplay: ['gameplay', 'operations/monetization'],
   operations: ['operations', 'tools', 'workflows'],

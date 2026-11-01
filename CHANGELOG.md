@@ -1,3 +1,11 @@
+# 2.4.0 — roblox-ai visual reference links and safe Stud asset handling
+
+- Added curated rights-aware links to izzyfrm/roblox-ai (25 art directions, Stud, GUI, VFX, icons); no copyrighted images copied.
+- Traced all 19 user-reported problematic image IDs to original Stud source and documented safer alternatives.
+- Added opt-in StudUISafe, StudIconsSafe and StudAssetGuard Lua modules; original MIT kit unchanged.
+- Added /visual-refs and /asset-audit specialist skills, static ID scanner and regression tests.
+- Did not claim external IDs were verified deleted or that replacement assets were confirmed working in Roblox Studio.
+
 # 2.3.1 — Codex desktop app no-CLI installer
 
 - Windows `.cmd` + PowerShell helper for personal GitHub marketplace registration without installing Codex CLI or Git.

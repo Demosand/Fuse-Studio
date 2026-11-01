@@ -9,7 +9,7 @@ disable-model-invocation: true
 Task: $ARGUMENTS
 
 ## 0. GUI style selection
-For a new interface without a chosen style or reference, ask the developer **one** concise question: Stud, Modern Minimal, Glass, Sci-Fi, Retro Pixel, Cartoon, Fantasy or custom/reference? If style is already chosen or existing project screens establish it, do not ask again; preserve that style. Follow `knowledge/ui-expert/style-selector` and `style-presets`. For Stud, use the original bundled source kit under `vendor/stud-ui/`, following `knowledge/ui-expert/stud-ui-design`. Explicit `/fuse-studio:stud-ui` chooses Stud immediately.
+For a new interface without a chosen style or reference, ask the developer **one** concise question: Stud, Modern Minimal, Glass, Sci-Fi, Retro Pixel, Cartoon, Fantasy or custom/reference? If style is already chosen or existing project screens establish it, do not ask again; preserve that style. Follow `knowledge/ui-expert/style-selector` and `style-presets`. For Stud, use the original bundled kit with StudUISafe and StudIconsSafe in `vendor/stud-ui/src/`, following `knowledge/ui-expert/stud-ui-design` and `stud-asset-replacement`. When references would help, selectively consult `knowledge/visual-references/roblox-ai-guide`; image screenshots are not reusable Roblox image IDs. Explicit `/fuse-studio:stud-ui` chooses Stud immediately.
 
 ## 1. Discover and design
 Inspect existing GUI hierarchy, style assets, gameplay theme, screenshots, input modes. Choose explicit visual language and define typography, semantic color tokens, corner/stroke/spacing scale, states and visual hierarchy. Never invent uploaded asset IDs. For brand-new screens, produce a small art-direction plan internally and proceed; ask only on blocking ambiguity.

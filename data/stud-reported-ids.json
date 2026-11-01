@@ -1,0 +1,122 @@
+{
+  "source": "community-reported, unverified by Studio",
+  "date": "2026-11-01",
+  "references": "https://github.com/izzyfrm/roblox-ai",
+  "note": "Static source usage mapping, not a Roblox network deletion test.",
+  "items": [
+    {
+      "id": "128758985973789",
+      "kind": "banana-icon",
+      "source": "vendor/stud-ui/src/CheckUIIcons.luau",
+      "fallback": "user-authorized replacement or custom icon"
+    },
+    {
+      "id": "80257872092187",
+      "kind": "gamepad-outline-1",
+      "source": "vendor/stud-ui/src/CheckUIIcons.luau",
+      "fallback": "user-authorized replacement or custom icon"
+    },
+    {
+      "id": "117542131956071",
+      "kind": "gamepad-2",
+      "source": "vendor/stud-ui/src/CheckUIIcons.luau",
+      "fallback": "user-authorized replacement or custom icon"
+    },
+    {
+      "id": "78959709568458",
+      "kind": "gamepad-outline-2",
+      "source": "vendor/stud-ui/src/CheckUIIcons.luau",
+      "fallback": "user-authorized replacement or custom icon"
+    },
+    {
+      "id": "117065333515921",
+      "kind": "gamepad-black",
+      "source": "vendor/stud-ui/src/CheckUIIcons.luau",
+      "fallback": "user-authorized replacement or custom icon"
+    },
+    {
+      "id": "79504731314029",
+      "kind": "gamepad-white",
+      "source": "vendor/stud-ui/src/CheckUIIcons.luau",
+      "fallback": "user-authorized replacement or custom icon"
+    },
+    {
+      "id": "121258694194678",
+      "kind": "twitter-bird-white",
+      "source": "vendor/stud-ui/src/CheckUIIcons.luau",
+      "fallback": "user-authorized replacement or custom icon"
+    },
+    {
+      "id": "140544932962041",
+      "kind": "stud-texture",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "108268925256584",
+      "kind": "shop-header",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "120530633952826",
+      "kind": "basket",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "83084350609799",
+      "kind": "robux-coin",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "89267995407736",
+      "kind": "rarity-common",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "131137889121430",
+      "kind": "rarity-uncommon",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "105083838865206",
+      "kind": "rarity-rare",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "101084229455301",
+      "kind": "rarity-epic",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "86850543324255",
+      "kind": "rarity-legendary",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "135658280761682",
+      "kind": "rarity-mythic",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "71658771409468",
+      "kind": "rarity-divine",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    },
+    {
+      "id": "121878407812617",
+      "kind": "rarity-cosmic",
+      "source": "vendor/stud-ui/src/StudUI.luau",
+      "fallback": "native Roblox GUI or authorized reupload"
+    }
+  ]
+}
